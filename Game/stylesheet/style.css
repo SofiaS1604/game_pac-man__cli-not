@@ -1,0 +1,159 @@
+body,
+html,
+ul,
+li,
+p,
+span,
+h1,
+h2,
+h3,
+h4 {
+  padding: 0;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.game {
+  background-color: #afeeee;
+  color: black;
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
+  height: 600px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: relative;
+  border-radius: 5%;
+}
+
+.cell {
+  width: 80px;
+  height: 80px;
+  float: left;
+}
+
+.game-timer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  top: 10px;
+  font-size: 25px;
+}
+
+.game-start {
+  display: block;
+}
+
+.game-play {
+  display: none;
+}
+
+.game-mp {
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  font-size: 25px;
+}
+
+.game-hp {
+  position: absolute;
+  left: 120px;
+  top: 10px;
+  font-size: 25px;
+}
+
+.game-grid {
+  padding-top: 70px;
+}
+
+.input {
+  font-size: 20px;
+  position: absolute;
+  left: 280px;
+  right: 0;
+  text-align: center;
+  top: 200px;
+}
+
+.game-score {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 25px;
+}
+
+.game-end {
+  display: none;
+}
+
+.title-big {
+  font-size: 50px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  top: 60px;
+}
+
+.score-title {
+  font-size: 38px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  top: 200px;
+}
+
+.score-title-value {
+  font-size: 38px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  top: 250px;
+}
+
+.button {
+  width: 150px;
+  height: 150px;
+  background-color: greenyellow;
+  border-radius: 50%;
+  font-size: 25px;
+  position: absolute;
+  text-align: center;
+  line-height: 150px;
+}
+
+.button-left {
+  position: absolute;
+  left: 150px;
+  top: 400px;
+}
+
+.button-right {
+  position: absolute;
+  right: 150px;
+  top: 400px;
+}
+
+.button:hover {
+  border-bottom: 2px solid black;
+}
+
+.elf {
+  position: absolute;
+  background-image: url('../img/elf.png');
+  background-size: cover; 
+  width: 80px;
+  height: 80px;
+  margin-top: 70px;
+  z-index: 1;
+}
+
+.cell--active {
+  background-image: url('../img/run.png');
+  background-size: cover;
+  z-index: 2;
+  position: relative;
+}
