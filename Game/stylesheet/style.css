@@ -1,159 +1,156 @@
-body,
-html,
-ul,
-li,
-p,
-span,
-h1,
-h2,
-h3,
-h4 {
-  padding: 0;
-  margin: 0;
-  font-family: 'Arial', sans-serif;
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Menlo', monospace;
 }
 
-.game {
-  background-color: #afeeee;
-  color: black;
-  margin-left: auto;
-  margin-right: auto;
-  width: 800px;
-  height: 600px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  position: relative;
-  border-radius: 5%;
+.game{
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: 690px;
+    height: 620px;
+    border: 1px solid black;
+    margin-top: 3px;
+    background: #cee6f2;
 }
 
-.cell {
-  width: 80px;
-  height: 80px;
-  float: left;
+.game_header-none{
+    height: 80px;
+
 }
 
-.game-timer {
-  position: absolute;
-  left: 0;
-  right: 0;
-  text-align: center;
-  top: 10px;
-  font-size: 25px;
+.game_header-block{
+    height: 80px;
+    width: 690px;
+    position: relative;
+    border-bottom: 1px solid black;
+
 }
 
-.game-start {
-  display: block;
+.game_play{
+    width: 690px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
 }
 
-.game-play {
-  display: none;
+.cell{
+    background: #000000;
+    width: 15px;
+    height: 15px;
+    float: left;
 }
 
-.game-mp {
-  position: absolute;
-  left: 20px;
-  top: 10px;
-  font-size: 25px;
+.wall{
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABTSURBVHjaYtwtw/efAQ84mlLEwMDAwGA9pw+rPBMDhYDlj+cPkjSgq6fYBQNvAGNDQ8P/AXUBC4yBK57p5wJc8Tz4o5F6YQDLdXR3AQAAAP//AwBJ4RFBmp/j6AAAAABJRU5ErkJggg==");
+    background-repeat: repeat;
+    width: 30px;
+    height: 30px;
+    float: left;
+    position: absolute;
+    top: 150px;
 }
 
-.game-hp {
-  position: absolute;
-  left: 120px;
-  top: 10px;
-  font-size: 25px;
+.circle{
+    background: greenyellow;
+    width: 15px;
+    height: 15px;
+    position: absolute;
 }
 
-.game-grid {
-  padding-top: 70px;
+
+.big-title{
+    font-size: 42px;
+    top: 150px;
+    color: black;
+    position: absolute;
+    text-decoration: underline;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+/*    text-shadow: 0 1px 0 #ccc,
+    0 2px 0 #c9c9c9,
+    0 3px 0 #bbb,
+    0 4px 0 #b9b9b9,
+    0 5px 0 #aaa,
+    0 6px 1px rgba(0,0,0,.1),
+    0 0 5px rgba(0,0,0,.1),
+    0 1px 3px rgba(0,0,0,.3),
+    0 3px 5px rgba(0,0,0,.2),
+    0 5px 10px rgba(0,0,0,.25),
+    0 10px 10px rgba(0,0,0,.2),
+    0 20px 20px rgba(0,0,0,.15);*/
 }
 
-.input {
-  font-size: 20px;
-  position: absolute;
-  left: 280px;
-  right: 0;
-  text-align: center;
-  top: 200px;
+.game_start .button-center{
+    width: 220px;
+    height: 70px;
+    background: #a8ff32;
+    position: absolute;
+    text-align: center;
+    font-size: 30px;
+    line-height: 70px;
+    bottom: 100px;
+    left: 235px;
+    border-radius: 5%;
+    font-family: 'Arial', sans-serif;
 }
 
-.game-score {
-  position: absolute;
-  right: 20px;
-  top: 10px;
-  font-size: 25px;
+.game_start .button-center:hover{
+    cursor: pointer;
+    text-decoration: underline;
 }
 
-.game-end {
-  display: none;
+.game_title{
+    font-size: 30px;
+    line-height: 80px;
+    text-align: center;
+    text-decoration: underline;
+    position: absolute;
+    left: 0;
+    right: 0;
 }
 
-.title-big {
-  font-size: 50px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  text-align: center;
-  top: 60px;
+.game_score{
+    position: absolute;
+    left: 20px;
+    line-height: 80px;
+    font-size: 20px;
 }
 
-.score-title {
-  font-size: 38px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  text-align: center;
-  top: 200px;
+.game_timer{
+    position: absolute;
+    right: 20px;
+    line-height: 80px;
+    font-size: 20px;
 }
 
-.score-title-value {
-  font-size: 38px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  text-align: center;
-  top: 250px;
+.level{
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 70px;
+    height: 50px;
+    text-align:  center;
+    font-size: 23px;
+    line-height: 50px;
+    float: left;
+    margin-right: 25px;
+    margin-bottom: 25px;
+    margin-left: 25px;
+    background: whitesmoke;
+    cursor: pointer;
 }
 
-.button {
-  width: 150px;
-  height: 150px;
-  background-color: greenyellow;
-  border-radius: 50%;
-  font-size: 25px;
-  position: absolute;
-  text-align: center;
-  line-height: 150px;
+.game_level{
+    width: 590px;
+    margin-left: 100px;
+    margin-top: 70px;
 }
 
-.button-left {
-  position: absolute;
-  left: 150px;
-  top: 400px;
-}
 
-.button-right {
-  position: absolute;
-  right: 150px;
-  top: 400px;
-}
 
-.button:hover {
-  border-bottom: 2px solid black;
-}
-
-.elf {
-  position: absolute;
-  background-image: url('../img/elf.png');
-  background-size: cover; 
-  width: 80px;
-  height: 80px;
-  margin-top: 70px;
-  z-index: 1;
-}
-
-.cell--active {
-  background-image: url('../img/run.png');
-  background-size: cover;
-  z-index: 2;
-  position: relative;
-}
