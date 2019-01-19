@@ -1,193 +1,385 @@
-$(document).ready(function() {
-  var size = 10;
-  var cell = 6;
-  var score = 0;
-  var time = 59;
-  var hp = 100;
-
-  for (var i = 0; i < cell; i++) {
-    var row = '<div class="row">';
-    for (var j = 0; j < size; j++) {
-      row += '<div class="cell"></div>';
-    }
-    row += '</div>';
-    $('.game-grid').append(row);
+$(document).ready(function () {
+ //поле   
+ var size = 47;
+  for( var i = 0; i < size; i++){
+      var row = '<div class="row">';
+      for (var j = 0; j < size; j++){
+          row += '<div class="cell"></div>'
+      }
+      row += '</div>';
+      $('.field').append(row)
   }
 
-  var gameOver = function() {
-    $('.game-end').fadeIn();
-    $('.game-start').fadeOut();
-    $('.game-play').fadeOut();
-    $('.score-title-value').text(score);
-    $('.elf').remove();
-  };
-
-  $('.button-play').click(function() {
-    $('.game-start').fadeOut();
-    $('.game-end').fadeOut();
-    $('.game-play').fadeIn();
-
-    hp = 100;
-    $('.game-hp').text(hp);
-
-    start();
-    time = 59;
-    score = 0;
-  });
-
-  var position = [5, 0];
-
-  var goLeft = function() {
-    if (position[1] > 0) {
-      position[1]--;
-    }
-  };
-
-  var goRigth = function() {
-    if (position[1] < size - 1) {
-      position[1]++;
-    }
-  };
-
-  var goTop = function() {
-    if (position[0] > 0) {
-      position[0]--;
-    }
-  };
-
-  var goBottom = function() {
-    if (position[0] < cell - 1) {
-      position[0]++;
-    }
-  };
-
-  var pressAtack = false;
-  var pressDef = false;
-
-  var showStep = function() {
-    $('.cell--active').removeClass('cell--active');
-    $('.cell--active').text('');
-    $('.row')
-      .eq(position[0])
-      .find('.cell')
-      .eq(position[1])
-      .addClass('cell--active');
-  };
-
-  $(document).bind('keydown', function(e) {
-    switch (e.keyCode) {
-      case 37: // left
-        goLeft();
-        break;
-      case 38: // top
-        goTop();
-        break;
-      case 39: // right
-        goRigth();
-        break;
-      case 40: // bottom
-        goBottom();
-        break;
-      case 88:
-        pressAtack = true;
-        break;
-      case 90:
-        pressDef = true;
-        break;
-    }
-    showStep();
-  });
-
-  $(document).bind('keyup', function(e) {
-    switch (e.keyCode) {
-      case 88:
-        pressAtack = false;
-        break;
-      case 90:
-        pressDef = false;
-        break;
-    }
-    showStep();
-  });
-  showStep();
-
-  var start = function() {
-    $('.game-timer').text();
-
-    if (time > 0) {
-      setTimeout(function() {
-        time--;
-        $('.game-timer').text();
-
-        var elf = $('<div class="elf"></div>');
-        $('.game-play').append(elf);
-        drawElf(elf);
-        start();
-      }, 2000);
-    } else {
-      gameOver();
-    }
-  };
-
-  var fight = function(elf) {
-    var hp = parseInt($('.game-hp').text());
-    if (!pressDef && !pressAtack) {
-      hp -= 20;
-      $('.game-hp').text(hp + 'HP');
-      if (hp < 0) {
-        time = 0;
-        gameOver();
-      }
-    }
-    if (pressAtack) {
-      elf.remove();
-    }
-  };
-
-  var drawElf = function(elf) {
-    var left_position = 9;
-    var top_position = Math.ceil(Math.random() * 5) * 80;
-
-    elf.css({
-      left: left_position * 80,
-      top: top_position
-    });
-    
-    var step = function(elf, left, top) {
-      if (elf.length > 0) {
-        left--;
-        var offset = $('.cell--active').offset();
-        $('.cell--active').text();
-        if (left < 0) {
-          elf.remove();
-        } else {
-          if (
-            (left + 1) * 80 - offset.left > -150 &&
-            (left + 1) * 80 - offset.left < -60 &&
-            offset.top - top === 80
-          ) {
-            fight(elf);
-            left++;
-          } else {
-            elf.animate(
-              {
-                left: left * 80
-              },
-              100
-            );
-            elf.text();
+ //кирпичи 
+  var number = 8;
+  for(var q = 0; q < number; q++){
+      if(q == 1){
+          var box_1 = 3;
+          var form_1 = 27;
+          for(var w = 0; w < box_1; w++ ){
+              var wall_1 = '<div class="box1 wall__item  wall-'+w+'">';
+              for(var e = 0; e < form_1; e++){
+                  wall_1 += '<div class="form"></div>'
+              }
+           wall_1 += '</div>';
+           $('.walls').append(wall_1)
           }
+      }
+
+      if(q == 2){
+          var box_2 = 9;
+          var form_2 = 9;
+          for(var r = 3; r < box_2; r++){
+              var wall_2 = '<div class="wall__item box2 wall-'+ r +'">';
+              for(var t = 0; t < form_2; t++){
+                  wall_2 += '<div class="form"></div>'
+              }
+           wall_2 += '</div>';
+           $('.walls').append(wall_2)
+          }
+      }
+
+      if(q == 3){
+          var box_3 = 12;
+          var form_3 = 10;
+          for(var y = 9; y < box_3; y++){
+              var wall_3 = '<div class="wall__item box3 wall-'+y+'">';
+              for(var u = 0; u < form_3; u++ ){
+                  wall_3 += '<div class="form"></div>'
+              }
+              wall_3 += '</div>';
+              $('.walls').append(wall_3)
+          }
+      }
+
+      if(q == 4){
+          var box_4 = 15;
+          var form_4 = 21;
+          for(var o = 12; o < box_4; o++ ){
+              var wall_4 = '<div class="wall__item box4 wall-'+o+'">';
+              for(var p = 0; p < form_4; p++){
+                  wall_4 += '<div class="form"></div>'
+              }
+              wall_4 += '</div>';
+              $('.walls').append(wall_4)
+          }
+      }
+
+      if(q == 5){
+          var box_5 = 17;
+          var form_5 = 45;
+          for(var a = 15; a < box_5; a++){
+              var wall_5 = '<div class="wall__item box5 wall-'+a+'">';
+              for(var s = 0; s < form_5; s++){
+                  wall_5 += '<div class="form"></div>'
+              }
+              wall_5 += '</div>';
+              $('.walls').append(wall_5)
+          }
+      }
+
+      if(q == 6){
+          var box_6 = 21;
+          var form_6 = 18;
+          for(var d = 17; d < box_6; d++){
+              var wall_6 = '<div class="wall__item box6 wall-'+d+'">';
+              for(var f = 0; f < form_6; f++){
+                  wall_6 += '<div class="form"></div> '
+              }
+              wall_6 += '</div>';
+              $('.walls').append(wall_6)
+          }
+      }
+
+      if(q == 7) {
+          var box_7 = 25;
+          var form_7 = 14;
+          var form_8 = 5;
+          var form_9 = 36;
+          var form_10 = 8;
+          for (var m = 21; m < box_7; m++) {
+              var wall_7 = '<div class=" wall__item box7 wall-' + m + ' ">';
+              if (m == 21) {
+                  for (var n = 0; n < form_7; n++) {
+                      wall_7 += '<div class="form"></div>'
+                  }
+              }
+              if (m == 22) {
+                  for (var l = 0; l < form_8; l++) {
+                      wall_7 += '<div class="form"></div>'
+                  }
+              }
+              if (m == 23) {
+                  for (var g = 0; g < form_9; g++) {
+                      wall_7 += '<div class="form"></div>'
+                  }
+              }
+              if (m == 24) {
+                  for (var h = 0; h < form_10; h++) {
+                      wall_7 += '<div class="form"></div>'
+                  }
+              }
+              wall_7 += '</div>';
+              $('.walls').append(wall_7)
+          }
+      }
+  }
+
+
+
+
+    var cellActive = [3,0];
+
+
+    var goLeft = function () {
+        if(cellActive[1] > 0 ){
+            cellActive[1]--;
+        }
+    };
+
+    var goRight = function () {
+        if(cellActive[1] < size-1){
+            cellActive[1] ++;
+        }
+    };
+
+    var goBottom = function () {
+        if(cellActive[0] < size-2 ){
+            cellActive[0]++;
+        }
+    };
+
+    var goTop = function () {
+        if(cellActive[0] > 3){
+            cellActive[0] --;
+        }
+    };
+
+
+
+
+    var calculation = {
+        data: [],
+        init:  function () {
+            const _this = this;
+            console.info("$('.wall__item')", $('.wall__item'));
+            $('.wall__item').each(function(){
+                const top = $(this).offset().top;
+                const left = $(this).offset().left;
+                const height = $(this).height();
+                const width = $(this).width();
+                calculation.data.push({
+                    x: left,
+                    y: top,
+                    w: width,
+                    h: height
+                })
+            })
+        },
+
+        check: (x, y) => {
+        let hasNotFound = true;
+
+
+    calculation.data.map(function(item){
+        if (item.x <= x &&
+            item.w-13 + item.x >= x &&
+            item.y <= y &&
+            item.y + item.h-13 >= y
+        ) {
+            hasNotFound = false;
+            return false
+        }
+    });
+    return hasNotFound;
+}
+};
+
+
+    var showStep = function () {
+        $('.cell-active').removeClass('cell-active');
+        $('.row').eq(cellActive[0]).find('.cell').
+        eq(cellActive[1]).addClass('cell-active');
+    };
+    $(document).bind('keydown', function (e) {
+        const position = $('.cell-active').offset();
+        const x = position.left;
+        const y = position.top;
+        switch(e.keyCode){
+            case 37:
+                if(calculation.check(x-13,y ) ){
+            
+                    goLeft();
+                }
+                e.preventDefault();
+                break;
+            case 38:
+                if (calculation.check(x, y-13)) {
+                    goTop();
+                }
+                e.preventDefault();
+                break;
+            case 39:
+                if (calculation.check(x+13, y)) {
+                    goRight();
+                }
+                e.preventDefault();
+                break;
+            case 40:
+                if (calculation.check(x, y+13)) {
+                    goBottom();
+                }
+
+                e.preventDefault();
+                break;
+        }
+        showStep();
+        var kvadrat1 = $('.cell-active').position().left;
+        console.info(kvadrat1);
+        var kvadrat2 = $('.cell-active').position().top;
+        console.info(kvadrat2);
+    });
+    showStep();
+
+$('.cell-active').css('background-color', 'black');
+
+$('.game-start').click( function () {
+    $('.circle').fadeOut();
+    $('.el').fadeIn();
+    $('.cell-active').fadeIn();
+    $('.title-big').fadeOut();
+    $('.game-play').fadeIn();
+    goRight();
+    showStep()
+
+
+});
+
+    var time = 10;
+    var pause = false;
+    var score = 0;
+
+    var gameOut = function () {
+        $('.circle').fadeIn();
+        $('.el').fadeOut();
+        $('.title-big').fadeIn();
+        $('.game-play').fadeOut();
+        $('.cell-active').css('background-color', 'black');
+
+    };
+
+
+    var drawCircle = function (circle) {
+      var left_position = Math.floor(Math.random()*48)*13;
+      var top_position = Math.floor(Math.random()*48)*13;
+        circle.css({
+            left: left_position,
+            top: top_position
+        });
+
+
+
+        let step = function(circle, left, top){
+
+            let position = $('.cell-active').position();
+
+
+            if(left === position.left && (top+49) === position.top){
+                score++;
+                $('.game-score').text('Score: '+score);
+                circle.remove();
+            }else{
+
+                setTimeout(function () {
+                    step(circle, left, top)
+                },10)
+            }
+
+        };
+
+        setTimeout(function () {
+            step(circle, left_position, top_position)
+        },10)
+
+
+    };
+
+   var startTime = function () {
+       $('.game-time').text(time);
+       if( time > 0 || pause) {
+           setTimeout(function () {
+               time--;
+               $('.game-time').text(time);
+               let circle = $('<div class="kvadrat"></div>');
+               drawCircle(circle);
+               $('.game-play').append(circle);
+               startTime()
+           }, 1000);
+       }    else{
+               gameOut();
+           }
+       };
+
+
+
+
+
+    $('.circle-play').click(function () {
+        $('.game-start').fadeIn();
+        $('.game-play').fadeIn();
+        $('.score-end').fadeOut();
+        $('.game-score').fadeIn();
+        $('.pause').fadeIn();
+        $('.game-time').fadeIn();
+        if(!pause) {
+            time = 60;
+            score = 0;
+            $('.game-score').text(score);
+        }
+        setTimeout(function(){
+            calculation.init()
+
+        }, 1000);
+        startTime();
+        pause = false;
+    });
+
+    $('.circle-again').click(function () {
+        $('.kvadrat').remove();
+        $('.game-start').fadeOut();
+        $('.game-play').fadeIn();
+        $('.score-end').fadeOut();
+        $('.game-end').fadeOut();
+        $('.game-score').fadeIn();
+        $('.el').fadeIn();
+        $('.game-time').fadeIn();
+        $('.pause').fadeIn();
+        if(!pause) {
+            time = 60;
+            score = 0;
+            $('.game-score').text(score);
+
+        }
+        if( time == 0 ){
+            gameOut()
         }
 
-        setTimeout(function() {
-          step(elf, left, top);
-        }, 1000);
-      }
-    };
-    setTimeout(function() {
-      step(elf, left_position, top_position);
-    }, 1000);
+        startTime();
+        pause = false;
+    });
 
-  
-  };
+    $('.pause').click(function () {
+        $('.circle').fadeIn();
+        $('.el').fadeOut();
+        $('.title-big').fadeIn();
+        $('.pause').fadeOut();
+        $('.game-time').fadeOut();
+        $('.game-score').fadeOut();
+        $('.score-end').fadeIn();
+        $('.cell-active').css('background-color', 'black');
+        pause = true;
+
+    });
+
 });
+

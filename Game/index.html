@@ -1,83 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <script src="./script/vue.js"></script>
-    <link rel="stylesheet" href="./stylesheet/style.css">
-    <meta charset="UTF-8">
-    <title>Title</title>
+	<meta charset="utf-8">
+<!--	<script src="./js/jquery-ui.min.js"></script>-->
+	<script src="./js/jquery-3.2.1.min.js"></script>
+
+	<script src="./js/script.js"></script>
+	<link rel="stylesheet" type="text/css" href="./stylesheet/style.css">
+	<title></title>
 </head>
 <body>
 
 
 
+<div class="field">
+	<div class="game-start">
+		<div class="title-big">Square Pakman</div>
+		<div class="circle circle-play">Play</div>
+		<a href="./result.html" class="circle circle-result">Result</a>
 
-    <div class="game" >
+	</div>
 
-        <!-- Header -->
-        <div class="game_header-none">
-            <div class="game_header-block" v-show="game_play" >
-                    <div class="game_title">SQUARE PAC-MAN</div>
-                    <div class="game_timer">Time: {{min}}:{{sec}}</div>
-                    <div class="game_score">Score: 0</div>
+	<div class="game-end">
+		<div class="circle circle-again">Again</div>
+		<div class="score-end game-score ">0</div>
+	</div>
 
-            </div>
-            <div class="game_title" v-show="game_level">SQUARE PAC-MAN</div>
-        </div>
+	<div class="game-play">
+			<div class="game-time"></div>
+			<div class="game-score"></div>
+			<div class="pause">Pause</div>
+	</div>
 
+<div class="el">
+	<div class="walls">
 
-
-
-
-        <!-- Main field -->
-        <div class="game_play">
-
-
-            <!-- Levels -->
-            <div class="game_level" v-show="game_level" >
-                <div class="level" v-for="level in levels" @click="level_info(level)">{{level}}</div>
-            </div>
-
-            <!-- Field -->
-            <div class="row" v-for="k in 36" v-show="game_play">
-                <div class="cell" v-for="l in 46" v-show="game_play"></div>
-            </div>
-
-            <!-- Blocks -->
-            <div class="game_wall">
-                <div class="wall" v-for="wall in walls" :style="{left: walls_left[wall]*15 + 'px', top: walls_top[wall]*15 + 'px'}"></div>
-            </div>
-
-            <div class="circle" v-show="game_play" :style="{left: circle_x*15 + 'px', top: circle_y*15 + 'px'}"></div>
-
-        </div>
-
-
-
-
-        <!-- Game start -->
-        <div class="game_start" v-show="game_start">
-            <div class="big-title">SQUARE PAC-MAN</div>
-            <div class="button-center button-play"  @click="button_play">Play</div>
-        </div>
-
-
-
-
-
-        <!-- Game end -->
-        <div class="game_end">
-
-        </div>
-
-
-
-
-    </div>
-    <script src="./script/index.js"></script>
-
+	</div>
+	<div class="kvad">
+		
+	</div>
+</div>
+</div>
 
 
 </body>
-
-
 </html>

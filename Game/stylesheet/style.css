@@ -1,156 +1,359 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Menlo', monospace;
+html,body{
+    margin:0;
+    padding:0;
 }
 
-.game{
-    margin-left: auto;
+.field{
+    width: 612px;
+    height: 600px;
     margin-right: auto;
+    margin-top: 10px;
     position: relative;
-    width: 690px;
-    height: 620px;
-    border: 1px solid black;
-    margin-top: 3px;
-    background: #cee6f2;
-}
-
-.game_header-none{
-    height: 80px;
-
-}
-
-.game_header-block{
-    height: 80px;
-    width: 690px;
-    position: relative;
-    border-bottom: 1px solid black;
-
-}
-
-.game_play{
-    width: 690px;
+    overflow: hidden;
     margin-left: auto;
+}
+
+
+.cell{
+    width: 13px;
+    height: 13px;
+    float: left;
+    box-sizing: border-box;
+    background-color: black;
+}
+
+.score-end{
+    font-size: 30px !important;
+    text-align: center;
+    top: 150px !important;
+    position: absolute;
+    color: #ffffff;
+    display: none !important;
+}
+
+.form{
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABTSURBVHjaYtwtw/efAQ84mlLEwMDAwGA9pw+rPBMDhYDlj+cPkjSgq6fYBQNvAGNDQ8P/AXUBC4yBK57p5wJc8Tz4o5F6YQDLdXR3AQAAAP//AwBJ4RFBmp/j6AAAAABJRU5ErkJggg==");
+    background-repeat: repeat;
+    width: 13px;
+    height: 13px;
+    float: left;
+    z-index: 1000;
+}
+
+.walls{
+    margin-left:auto;
     margin-right: auto;
-    position: relative;
+    position: absolute;
+    display: block;
+}
+
+.el{
+    display: none;
+}
+
+.wall-0, .wall-1{
+    width: 39px;
+    height:117px;
+    z-index: 1000;
+    overflow: hidden;
+    position: absolute;
+}
+
+.wall-2{
+    width: 117px;
+    height:39px;
+    z-index: 1000;
+    position: absolute;
+}
+
+.box6{
+    width: 39px;
+    height:117px;
+    z-index: 1000;
+    position: absolute;
+}
+
+.box7{
+    width: 39px;
+    height:117px;
+    z-index: 1000;
+    position: absolute;
+}
+
+.box2{
+    width: 39px;
+    height: 39px;
+    z-index: 1000;
+    position: absolute;
+}
+
+.box3{
+    z-index: 1000;
+    position: absolute;
+    width: 26px;
+    height: 65px;
+}
+
+.box4{
+    z-index: 1000;
+    position: absolute;
+    width: 39px;
+    height: 78px;
+}
+
+.box5{
+    z-index: 1000;
+    position: absolute;
+    width: 39px;
+    height: 195px;
+}
+
+.box1{
     overflow: hidden;
 }
 
-.cell{
-    background: #000000;
-    width: 15px;
-    height: 15px;
-    float: left;
+.wall-0{
+    margin-left: 39px;
+    margin-top: 65px;
 }
 
-.wall{
-    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABTSURBVHjaYtwtw/efAQ84mlLEwMDAwGA9pw+rPBMDhYDlj+cPkjSgq6fYBQNvAGNDQ8P/AXUBC4yBK57p5wJc8Tz4o5F6YQDLdXR3AQAAAP//AwBJ4RFBmp/j6AAAAABJRU5ErkJggg==");
-    background-repeat: repeat;
-    width: 30px;
-    height: 30px;
-    float: left;
-    position: absolute;
-    top: 150px;
+.wall-1{
+    margin-left: 117px;
+    margin-top: 182px;
+}
+
+.wall-2{
+    margin-left: 39px;
+    margin-top: 338px;
+}
+
+.wall-3{
+    margin-left: 234px;
+    margin-top: 286px;
+}
+
+.wall-4{
+    margin-left: 520px;
+    margin-top: 195px;
+}
+
+.wall-5{
+    margin-left: 416px;
+    margin-top: 195px;
+}
+
+.wall-6{
+    margin-left: 117px;
+    margin-top: 585px;
+}
+
+.wall-7{
+    margin-left: 416px;
+    margin-top: 403px;
+}
+
+.wall-8{
+    margin-left: 416px;
+    margin-top: 481px;
+}
+
+.wall-9{
+    margin-left: 247px;
+    margin-top: 65px;
+}
+
+.wall-10{
+    margin-left: 312px;
+    margin-top: 558px;
+}
+
+.wall-11{
+    margin-left: 455px;
+    margin-top: 65px;
+    width: 65px;
+    height: 26px;
+}
+
+.wall-12{
+    margin-left:416px;
+    margin-top:65px;
+}
+
+.wall-13{
+    margin-left:520px;
+    margin-top:65px;
+}
+
+.wall-14{
+    margin-left: 117px;
+    margin-top: 455px;
+}
+
+.wall-15{
+    margin-left: 39px;
+    margin-top: 428px;
+}
+
+.wall-16{
+    margin-left: 520px;
+    margin-top: 324px;
+}
+
+.wall-17{
+    margin-left: 312px;
+    margin-top: 390px;
+}
+
+.wall-18{
+    margin-left: 234px;
+    margin-top: 390px;
+}
+
+.wall-19{
+    margin-left: 520px;
+    margin-top: 546px;
+}
+
+.wall-20{
+    margin-left: 416px;
+    margin-top: 546px;
+}
+
+.wall-23{
+    height:52px;
+    width:117px;
+    margin-left: 234px;
+    margin-top: 468px;
+}
+
+.wall-22{
+    height: 13px;
+    width: 65px;
+    margin-left: 455px;
+    margin-top: 610px;
+}
+
+.wall-21{
+    height: 26px;
+    width: 91px;
+    margin-left: 182px;
+    margin-top: 130px;
+}
+
+
+.wall-24{
+    height:26px;
+    width:52px;
+    margin-left: 260px;
+    margin-top: 559px;
+}
+
+.row{
+    overflow: hidden;
+}
+
+.cell-active{
+    background-color: greenyellow;
+    z-index: 1000;
+    position: relative;
+    width: 13px;
+    height:13px;
+    /*margin-left: 0.5px;*/
+}
+
+.tank-player {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAC4jAAAuIwF4pT92AAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAADySURBVHja7FYhEsIwENwwnanFgeQ5xeGw8ANQ8ISi6A+KxdXBc5DgaquCIZ3mSEoSRJNM12XmZud2s5cc45zDFa9mywFglpbMlWOCgTE2MDYwNsC670BzXUqPQr2aQzXn+xPjAHDcbQAA0+oJAEjXN6nOhM8vB4QyU1AHhEKKvLhI5/OB++NAInW6yGSFj7ta0aeu/kEunGnrFQ6FlQHqkA5CqXCAOhl+BqhSeufazPiYgcRGMa3Lq6x3/r94C5GBEnFkwBTxZcAW8WaATkOQGXDaB3R/QusIUez1PtC7E/47FbqNKbydsHtnNjDhG9yB9wC1mor7QrCddwAAAABJRU5ErkJggg==");
 }
 
 .circle{
-    background: greenyellow;
-    width: 15px;
-    height: 15px;
-    position: absolute;
-}
-
-
-.big-title{
-    font-size: 42px;
-    top: 150px;
+    width: 100px;
+    height:100px;
+    border-radius: 50%;
+    background-color: yellow;
     color: black;
     position: absolute;
-    text-decoration: underline;
-    left: 0;
-    right: 0;
     text-align: center;
-    font-family: 'Arial', sans-serif;
-/*    text-shadow: 0 1px 0 #ccc,
-    0 2px 0 #c9c9c9,
-    0 3px 0 #bbb,
-    0 4px 0 #b9b9b9,
-    0 5px 0 #aaa,
-    0 6px 1px rgba(0,0,0,.1),
-    0 0 5px rgba(0,0,0,.1),
-    0 1px 3px rgba(0,0,0,.3),
-    0 3px 5px rgba(0,0,0,.2),
-    0 5px 10px rgba(0,0,0,.25),
-    0 10px 10px rgba(0,0,0,.2),
-    0 20px 20px rgba(0,0,0,.15);*/
-}
-
-.game_start .button-center{
-    width: 220px;
-    height: 70px;
-    background: #a8ff32;
-    position: absolute;
-    text-align: center;
+    line-height: 100px;
     font-size: 30px;
-    line-height: 70px;
-    bottom: 100px;
-    left: 235px;
-    border-radius: 5%;
-    font-family: 'Arial', sans-serif;
-}
-
-.game_start .button-center:hover{
+    z-index:3000;
     cursor: pointer;
-    text-decoration: underline;
 }
-
-.game_title{
-    font-size: 30px;
-    line-height: 80px;
+.game-time {
     text-align: center;
-    text-decoration: underline;
-    position: absolute;
-    left: 0;
+    top: 10px;
+    font-size: 25px;
     right: 0;
-}
-
-.game_score{
+    left: 13px;
+    color: #fff;
     position: absolute;
-    left: 20px;
-    line-height: 80px;
-    font-size: 20px;
+}
+.circle-play{
+    top: 415px;
+    left: 129px;
 }
 
-.game_timer{
+.game-play{
     position: absolute;
-    right: 20px;
-    line-height: 80px;
-    font-size: 20px;
+    color: #ffffff;
+    display: none;
 }
 
-.level{
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    width: 70px;
-    height: 50px;
-    text-align:  center;
-    font-size: 23px;
-    line-height: 50px;
-    float: left;
-    margin-right: 25px;
-    margin-bottom: 25px;
-    margin-left: 25px;
-    background: whitesmoke;
+.pause{
+    font-size: 25px;
+    left:530px;
+    top:13px;
+    position: absolute;
     cursor: pointer;
 }
 
-.game_level{
-    width: 590px;
-    margin-left: 100px;
-    margin-top: 70px;
+.score{
+    font-size: 25px;
+    top:13px;
+    left: 285px;
+    position: absolute;
+}
+
+.circle-result{
+    top: 415px;
+    left: 389px;
+    text-decoration: none;
+}
+
+.circle-again{
+    display: none;
+    top: 315px;
+    left: 250px;
+    text-decoration: none;
 }
 
 
+.game-score{
+    left: 230px;
+    top: 10px;
+    position: absolute;
+    font-size: 25px;
+    color: white;
+    z-index: 1000;
+    display: none;
+    width: 150px;
+    text-align: center;
+}
 
+.kvadrat{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: yellow;
+    position: absolute;
+    z-index: 900;
+    margin-top: 50px;
+}
+
+.title-big{
+    position: absolute;
+    text-align: center;
+    font-size: 50px;
+    color: white;
+    left: 150px;
+    top: 30px;
+}
