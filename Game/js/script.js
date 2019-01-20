@@ -273,8 +273,8 @@ $('.game-start').click( function () {
       var left_position = Math.floor(Math.random()*48)*13;
       var top_position = Math.floor(Math.random()*48)*13;
         circle.css({
-            left: left_position,
-            top: top_position
+            left: left_position+3,
+            top: top_position+3
         });
 
 
@@ -284,7 +284,7 @@ $('.game-start').click( function () {
             let position = $('.cell-active').position();
 
 
-            if(left === position.left && (top+49) === position.top){
+            if(left === position.left && (top+52) === position.top){
                 score++;
                 $('.game-score').text('Score: '+score);
                 circle.remove();
@@ -334,7 +334,7 @@ $('.game-start').click( function () {
         if(!pause) {
             time = 60;
             score = 0;
-            $('.game-score').text(score);
+            $('.game-score').text('Score: '+score);
         }
         setTimeout(function(){
             calculation.init()
@@ -357,7 +357,7 @@ $('.game-start').click( function () {
         if(!pause) {
             time = 60;
             score = 0;
-            $('.game-score').text(score);
+            $('.game-score').text('Score: '+ score);
 
         }
         if( time == 0 ){
