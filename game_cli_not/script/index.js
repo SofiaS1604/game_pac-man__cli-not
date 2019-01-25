@@ -72,7 +72,7 @@ let game = new Vue({
       this.game_level = false;
       this.game_play = true;
 
-      for (let i = 0; i < 55 ; i++) {
+      for (let i = 0; i < 45 ; i++) {
         let wall = this.walls.push(i);
 
         let left = Math.floor(Math.floor(Math.random() * (36/6)) + 1);
