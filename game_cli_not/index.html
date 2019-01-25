@@ -44,7 +44,7 @@
 
     <!-- Blocks -->
     <div class="game_wall">
-      <div class="wall" v-for="wall in walls" :style="{left: walls_left[wall]*15*7 + 'px', top: walls_top[wall]*15*4+ 'px'}"></div>
+      <div class="wall" v-for="wall in walls" :style="{left: walls_left[wall] + 'px', top: walls_top[wall]+ 'px'}"></div>
     </div>
 
     <div class="circle" v-show="game_play" :style="{left: circle_x*15 + 'px', top: circle_y*15 + 'px'}"></div>

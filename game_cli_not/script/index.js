@@ -73,13 +73,18 @@ let game = new Vue({
       this.game_play = true;
 
       for (let i = 0; i < 55 ; i++) {
-        let wall = this.walls.push( i);
+        let wall = this.walls.push(i);
 
         let left = Math.floor(Math.floor(Math.random() * (36/6)) + 1);
         let top = Math.floor(Math.floor(Math.random() * (46/5)) + 1);
 
-        let wall_left = this.walls_left.push(Math.floor(Math.random() * (left)) + 1);
-        let wall_top = this.walls_top.push(Math.floor(Math.random() * (top)) + 1);
+
+        let wall_top = this.walls_top.push(((Math.floor(Math.random() * (top)) + 1)*60)-15);
+        let wall_left = this.walls_left.push(((Math.floor(Math.random() * (left)) + 1)*105)-60);
+
+
+
+
 
 
 
@@ -94,28 +99,68 @@ let game = new Vue({
 
     left(){
       if(this.circle_x > 0){
+          let indentification = 0;
 
-        this.circle_x --;
+          for(let i = 0; i < this.walls.length; i++ ){
+              if((this.walls_top[i] === this.circle_y*15 || this.walls_top[i]+15 === this.circle_y*15) && this.walls_left[i]+30 === this.circle_x*15  ){
+                  indentification = 1;
+              }
+          }
+
+          if(indentification !== 1){
+              this.circle_x --;
+          }
       }
     },
 
     top(){
       if(this.circle_y > 0){
+          let indentification = 0;
 
-        this.circle_y --;
+          for(let i = 0; i < this.walls_left.length+1; i++ ){
+              if(this.walls_top[i]+30 === this.circle_y*15 && (this.walls_left[i] === this.circle_x*15 || this.walls_left[i]+15 === this.circle_x*15) ){
+                  indentification = 1;
+              }
+          }
+
+          if(indentification !== 1){
+              this.circle_y --;
+          }
       }
     },
 
     right(){
       if(this.circle_x < this.cell - 1){
 
-        this.circle_x ++;
+          let indentification = 0;
+
+          for(let i = 0; i < this.walls.length; i++ ){
+              if((this.walls_top[i] === this.circle_y*15 || this.walls_top[i]+15 === this.circle_y*15) && this.walls_left[i]-15 === this.circle_x*15  ){
+                  indentification = 1;
+              }
+          }
+
+          if(indentification !== 1){
+              this.circle_x ++;
+          }
+
       }
     },
 
     bottom(){
       if(this.circle_y < this.row -1){
-        this.circle_y ++;
+          let indentification = 0;
+
+          for(let i = 0; i < this.walls.length; i++ ){
+              if(this.walls_top[i]-15 === this.circle_y*15 && (this.walls_left[i] === this.circle_x*15 || this.walls_left[i]+15 === this.circle_x*15) ){
+                  indentification = 1;
+              }
+          }
+
+          if(indentification !== 1){
+                this.circle_y ++;
+          }
+
       }
     },
 
