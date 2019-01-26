@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!--<link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">-->
+  <!--<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">-->
+  <!--<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">-->
+  <!--<link href="https://fonts.googleapis.com/css?family=ZCOOL+KuaiLe" rel="stylesheet">-->
+  <!--<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">-->
+  <!--<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">-->
+  <!--<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">-->
   <script src="./script/vue.js"></script>
   <link rel="stylesheet" href="./stylesheet/style.css">
   <meta charset="UTF-8">
@@ -19,6 +26,7 @@
       <div class="game_title">SQUARE PAC-MAN</div>
       <div class="game_timer">Time: {{min}}:{{sec}}</div>
       <div class="game_score">Score: 0</div>
+      <div class="game_target">Target: {{target}}</div>
 
     </div>
     <div class="game_title" v-show="game_level">SQUARE PAC-MAN</div>
@@ -26,28 +34,31 @@
 
 
 
+  <!-- Levels -->
+  <div class="game_level" v-show="game_level" >
+
+    <div class="level" v-for="level in levels" @click="level_info(level)">{{level}}</div>
+
+  </div>
 
 
   <!-- Main field -->
-  <div class="game_play">
+  <div class="game_play" v-show="game_play">
 
 
-    <!-- Levels -->
-    <div class="game_level" v-show="game_level" >
-      <div class="level" v-for="level in levels" @click="level_info(level)">{{level}}</div>
-    </div>
+
 
     <!-- Field -->
-    <div class="row" v-for="k in 36" v-show="game_play">
-      <div class="cell" v-for="l in 46" v-show="game_play"></div>
+    <div class="row" v-for="k in 36">
+      <div class="cell" v-for="l in 46"></div>
     </div>
 
     <!-- Blocks -->
     <div class="game_wall">
-      <div class="wall" v-for="wall in walls" :style="{left: walls_left[wall] + 'px', top: walls_top[wall]+ 'px'}"></div>
+      <div class="wall"  v-for="wall in walls" :style="{left: walls_left[wall] + 'px', top: walls_top[wall]+ 'px'}"></div>
     </div>
 
-    <div class="circle" v-show="game_play" :style="{left: circle_x*15 + 'px', top: circle_y*15 + 'px'}"></div>
+    <div class="circle" :style="{left: circle_x*15 + 'px', top: circle_y*15 + 'px'}"></div>
 
   </div>
 

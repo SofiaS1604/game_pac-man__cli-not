@@ -2,6 +2,14 @@
   margin: 0;
   padding: 0;
   font-family: 'Menlo', monospace;
+  /*font-family: 'Major Mono Display', monospace;*/
+  /*font-family: 'Dosis', sans-serif;*/
+  /*font-family: 'Indie Flower', cursive;*/
+  /*font-family: 'ZCOOL KuaiLe', cursive;*/
+  /*font-family: 'Righteous', cursive;*/
+  /*font-family: 'Orbitron', sans-serif;*/
+  /*font-family: 'Fredoka One', cursive;*/
+  /*font-family: 'Orbitron', sans-serif;*/
 }
 
 .game{
@@ -62,7 +70,7 @@
 
 
 .big-title{
-  font-size: 42px;
+  font-size: 50px;
   top: 150px;
   color: black;
   position: absolute;
@@ -70,13 +78,14 @@
   left: 0;
   right: 0;
   text-align: center;
-  font-family: 'Arial', sans-serif;
+  /*font-family: 'Arial', sans-serif;*/
+  /*font-family: 'Orbitron', sans-serif;*/
 }
 
 .game_start .button-center{
   width: 220px;
   height: 70px;
-  background: #a8ff32;
+  background: rgba(173, 255, 47, 0.8);
   position: absolute;
   text-align: center;
   font-size: 30px;
@@ -84,9 +93,12 @@
   bottom: 100px;
   left: 235px;
   border-radius: 5%;
-  font-family: 'Arial', sans-serif;
+  /*font-family: 'Arial', sans-serif;*/
+  /*font-family: 'Orbitron', sans-serif;*/
   border: 1px solid black;
+  cursor: pointer;
 }
+
 
 .game_title{
   font-size: 30px;
@@ -96,20 +108,28 @@
   position: absolute;
   left: 0;
   right: 0;
+
 }
 
 .game_score{
   position: absolute;
   left: 20px;
-  line-height: 80px;
   font-size: 20px;
+  top: 10px;
 }
 
 .game_timer{
   position: absolute;
-  right: 20px;
+  right: 25px;
   line-height: 80px;
   font-size: 20px;
+}
+
+.game_target{
+  position: absolute;
+  top: 45px;
+  font-size: 20px;
+  left: 20px;
 }
 
 .level{
@@ -136,4 +156,17 @@
   margin-top: 70px;
 }
 
+.instr_text{
+  height: 100px;
+  padding: 25px;
+}
 
+.button-left{
+    float: left;
+    padding-left: 100px;
+}
+
+.button-right{
+  float: right;
+  padding-right: 100px;
+}
