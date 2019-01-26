@@ -85,16 +85,7 @@
   left: 235px;
   border-radius: 5%;
   font-family: 'Arial', sans-serif;
-  border-bottom: 2px solid black;
-  border-top: 1px solid black;
-  border-right: 1px solid black;
-  border-left: 1px solid black;
-  transition-duration: 0.05s;
-}
-
-.game_start .button-center:hover{
-  cursor: pointer;
-  border-bottom: 1px solid black;
+  border: 1px solid black;
 }
 
 .game_title{
