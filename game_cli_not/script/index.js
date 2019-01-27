@@ -19,7 +19,9 @@ let game = new Vue({
         square_y: 0,
         target: null,
         score: 0,
-        circles: [0,1,2,3,4,5,6,7,8,9]
+        circles: [0,1,2,3,4,5,6,7,8,9],
+        game_end: false,
+        title_end: ''
     },
 
     methods: {
@@ -33,6 +35,7 @@ let game = new Vue({
             this.walls_top = [];
             this.square_x = 0;
             this.square_y = 0;
+            this.game_end = false;
 
             for (let i = 1; i < 21; i++) {
                 this.levels.push(i);
@@ -64,10 +67,16 @@ let game = new Vue({
         },
 
         gameOver() {
-            this.game_start = true;
+            this.game_start = false;
             this.game_play = false;
             this.game_level = false;
             this.game_time = 90;
+            this.game_end = true;
+
+            if(this.target <= this.score)
+                this.title_end = 'You win!';
+            else
+                this.title_end = 'You lose!'
         },
 
 
@@ -80,8 +89,7 @@ let game = new Vue({
             this.game_start = false;
             this.changeCircle();
             this.scoreChange();
-
-            console.log(this.circle_top);
+            this.title_end = '';
 
             for (let i = 0; i < 55 ; i++) {
                 this.walls.push(i);
@@ -105,8 +113,6 @@ let game = new Vue({
             setTimeout(() =>{
                 this.changeCircle();
             },5000)
-
-
         },
 
         scoreChange(){
