@@ -1,8 +1,7 @@
 *{
   margin: 0;
   padding: 0;
-  /*font-family: 'Menlo', monospace;*/
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Menlo', monospace;
 }
 
 .game{
@@ -74,6 +73,7 @@
   left: 0;
   right: 0;
   text-align: center;
+  font-family: 'Dosis', sans-serif;
 }
 
 .button-center{
