@@ -11,15 +11,19 @@ let game = new Vue({
         walls: [],
         walls_left: [],
         walls_top: [],
+        circle_left: [],
+        circle_top: [],
         row: 36,
         cell: 46,
-        circle_x: 0,
-        circle_y: 0,
-        target: null
+        square_x: 0,
+        square_y: 0,
+        target: null,
+        score: 0,
+        circles: [0,1,2,3,4,5,6,7,8,9]
     },
 
     methods: {
-        button_play: function () {
+        gameStart: function () {
             this.game_start = false;
             this.game_level = true;
             this.game_play = false;
@@ -27,8 +31,8 @@ let game = new Vue({
             this.walls = [];
             this.walls_left = [];
             this.walls_top = [];
-            this.circle_x = 0;
-            this.circle_y = 0;
+            this.square_x = 0;
+            this.square_y = 0;
 
             for (let i = 1; i < 21; i++) {
                 this.levels.push(i);
@@ -67,13 +71,17 @@ let game = new Vue({
         },
 
 
-        level_info: function(id){
+        gamePlay: function(id){
 
             this.target = id+35;
             this.gameTimer();
             this.game_level = false;
             this.game_play = true;
             this.game_start = false;
+            this.changeCircle();
+            this.scoreChange();
+
+            console.log(this.circle_top);
 
             for (let i = 0; i < 55 ; i++) {
                 this.walls.push(i);
@@ -84,71 +92,100 @@ let game = new Vue({
                 this.walls_top.push(((Math.floor(Math.random() * (top)) + 1)*60)-15);
                 this.walls_left.push(((Math.floor(Math.random() * (left)) + 1)*105)-60);
             }
+
+        },
+
+        changeCircle(){
+
+            for(let i = 0; i < 11; i++){
+                this.circle_left[i] = Math.floor(Math.floor(Math.random() * 36));
+                this.circle_top[i] = Math.floor(Math.floor(Math.random() * 36));
+            }
+
+            setTimeout(() =>{
+                this.changeCircle();
+            },5000)
+
+
+        },
+
+        scoreChange(){
+
+            for(let i = 0; i < this.circle_left.length; i++ ){
+                if(this.circle_left[i]*15 === this.square_x*15 && this.circle_top[i]*15 === this.square_y*15){
+
+                    this.score += 1;
+                    delete this.circle_top[i];
+                    delete this.circle_left[i];
+                }
+            }
+
+            setTimeout(() =>{
+                this.scoreChange()
+            },25)
         },
 
 
-
-
         left(){
-            if(this.circle_x > 0){
-                let indentification = 0;
+            if(this.square_x > 0){
+                let counter = 0;
 
                 for(let i = 0; i < this.walls.length; i++ ){
-                    if((this.walls_top[i] === this.circle_y*15 || this.walls_top[i]+15 === this.circle_y*15) && this.walls_left[i]+30 === this.circle_x*15){
-                        indentification = 1;
+                    if((this.walls_top[i] === this.square_y*15 || this.walls_top[i]+15 === this.square_y*15) && this.walls_left[i]+30 === this.square_x*15){
+                        counter = 1;
                     }
                 }
 
-                if(indentification !== 1){
-                    this.circle_x --;
+                if(counter !== 1){
+                    this.square_x --;
                 }
             }
         },
 
         top(){
-            if(this.circle_y > 0){
-                let indentification = 0;
+            if(this.square_y > 0){
+                let counter = 0;
 
-                for(let i = 0; i < this.walls_left.length+1; i++ ){
-                    if(this.walls_top[i]+30 === this.circle_y*15 && (this.walls_left[i] === this.circle_x*15 || this.walls_left[i]+15 === this.circle_x*15)){
-                        indentification = 1;
+                for(let i = 0; i < this.walls_left.length; i++ ){
+                    if(this.walls_top[i]+30 === this.square_y*15 && (this.walls_left[i] === this.square_x*15 || this.walls_left[i]+15 === this.square_x*15)){
+                        counter = 1;
                     }
                 }
 
-                if(indentification !== 1){
-                    this.circle_y --;
+                if(counter !== 1){
+                    this.square_y --;
                 }
             }
         },
 
         right(){
-            if(this.circle_x < this.cell - 1){
-                let indentification = 0;
+            if(this.square_x < this.cell - 1){
+                let counter = 0;
 
                 for(let i = 0; i < this.walls.length; i++ ){
-                    if((this.walls_top[i] === this.circle_y*15 || this.walls_top[i]+15 === this.circle_y*15) && this.walls_left[i]-15 === this.circle_x*15  ) {
-                        indentification = 1;
+                    if((this.walls_top[i] === this.square_y*15 || this.walls_top[i]+15 === this.square_y*15) && this.walls_left[i]-15 === this.square_x*15  ) {
+                        counter = 1;
                     }
                 }
 
-                if(indentification !== 1){
-                    this.circle_x ++;
+                if(counter !== 1){
+                    this.square_x ++;
                 }
             }
         },
 
         bottom(){
-            if(this.circle_y < this.row -1){
-                let indentification = 0;
+            if(this.square_y < this.row -1){
+                let counter = 0;
 
                 for(let i = 0; i < this.walls.length; i++ ){
-                    if(this.walls_top[i]-15 === this.circle_y*15 && (this.walls_left[i] === this.circle_x*15 || this.walls_left[i]+15 === this.circle_x*15)) {
-                        indentification = 1;
+                    if(this.walls_top[i]-15 === this.square_y*15 && (this.walls_left[i] === this.square_x*15 || this.walls_left[i]+15 === this.square_x*15)) {
+                        counter = 1;
                     }
                 }
 
-                if(indentification !== 1){
-                    this.circle_y ++;
+                if(counter !== 1){
+                    this.square_y ++;
                 }
             }
         },

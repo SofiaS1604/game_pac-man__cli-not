@@ -41,6 +41,7 @@
   width: 15px;
   height: 15px;
   float: left;
+  z-index: 999;
 }
 
 .wall{
@@ -50,14 +51,16 @@
   height: 30px;
   float: left;
   position: absolute;
+  z-index: 1;
 
 }
 
-.circle{
+.square{
   background: greenyellow;
   width: 15px;
   height: 15px;
   position: absolute;
+  z-index: 9;
 }
 
 
@@ -70,8 +73,6 @@
   left: 0;
   right: 0;
   text-align: center;
-  /*font-family: 'Arial', sans-serif;*/
-  /*font-family: 'Orbitron', sans-serif;*/
 }
 
 .game_start .button-center{
@@ -85,8 +86,6 @@
   bottom: 100px;
   left: 235px;
   border-radius: 5%;
-  /*font-family: 'Arial', sans-serif;*/
-  /*font-family: 'Orbitron', sans-serif;*/
   border: 1px solid black;
   cursor: pointer;
 }
@@ -148,17 +147,10 @@
   margin-top: 70px;
 }
 
-.instr_text{
-  height: 100px;
-  padding: 25px;
-}
-
-.button-left{
-    float: left;
-    padding-left: 100px;
-}
-
-.button-right{
-  float: right;
-  padding-right: 100px;
+.circle{
+  width: 10px;
+  height: 10px;
+  background: red;
+  border-radius: 50%;
+  position: absolute;
 }
