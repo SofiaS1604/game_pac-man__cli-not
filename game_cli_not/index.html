@@ -8,77 +8,54 @@
   <title>Title</title>
 </head>
 <body>
+  <div class="game" >
 
-
-
-
-<div class="game" >
-
-  <!-- Header -->
-  <div class="game_header-none">
-    <div class="game_header-block" v-show="game_play" >
-      <div class="game_title">SQUARE PAC-MAN</div>
-      <div class="game_timer">Time: {{min}}:{{sec}}</div>
-      <div class="game_score">Score: {{score}}</div>
-      <div class="game_target">Target: {{target}}</div>
-
-    </div>
-    <div class="game_title" v-show="game_level">SQUARE PAC-MAN</div>
-  </div>
-
-
-
-  <!-- Levels -->
-  <div class="game_level" v-show="game_level" >
-
-    <div class="level" v-for="level in levels" @click="gamePlay(level)">{{level}}</div>
-
-  </div>
-
-
-  <!-- Main field -->
-  <div class="game_play" v-show="game_play">
-
-    <!-- Field -->
-    <div class="row" v-for="k in 36">
-      <div class="cell" v-for="l in 46"></div>
+    <!-- Header -->
+    <div class="game_header-none">
+      <div class="game_header-block" v-show="game_play" >
+        <div class="game_title">SQUARE PAC-MAN</div>
+        <div class="game_timer">Time: {{min}}:{{sec}}</div>
+        <div class="game_score">Score: {{score}}</div>
+        <div class="game_target">Target: {{target}}</div>
+      </div>
+      <div class="game_title" v-show="game_level">SQUARE PAC-MAN</div>
     </div>
 
-    <!-- Blocks -->
-    <div class="game_wall">
-      <div class="wall"  v-for="wall in walls" :style="{left: walls_left[wall] + 'px', top: walls_top[wall]+ 'px'}"></div>
+    <!-- Levels -->
+    <div class="game_level" v-show="game_level" >
+      <div class="level" v-for="level in levels" @click="gamePlay(level)">{{level}}</div>
     </div>
 
-    <div class="square" :style="{left: square_x*15 + 'px', top: square_y*15 + 'px'}"></div>
-    <!--<div class="circle" v-for="circle in circles" :style="{left: circle_left[circle]*15 + 'px', top: circle_top[circle]*15 + 'px'}"></div>-->
+    <!-- Main field -->
+    <div class="game_play" v-show="game_play">
 
-    <div class="circles">
+      <!-- Field -->
+      <div class="row" v-for="k in 36">
+        <div class="cell" v-for="l in 46"></div>
+      </div>
+
+      <!-- Blocks -->
+      <div class="game_wall">
+        <div class="wall"  v-for="wall in walls" :style="{left: walls_left[wall] + 'px', top: walls_top[wall]+ 'px'}"></div>
+      </div>
+
+      <div class="square" :style="{left: square_x*15 + 'px', top: square_y*15 + 'px'}"></div>
+      <div class="circles"></div>
 
     </div>
 
+    <!-- Game start -->
+    <div class="game_start" v-show="game_start">
+      <div class="big-title">SQUARE PAC-MAN</div>
+      <div class="button-center button-play"  @click="gameStart">Play</div>
+    </div>
+
+    <!-- Game end -->
+    <div class="game_end" v-show="game_end">
+      <div class="big-title">{{title_end}}</div>
+      <div class="button-center button-play"  @click="gameStart">Again</div>
+    </div>
   </div>
-
-  <!-- Game start -->
-  <div class="game_start" v-show="game_start">
-    <div class="big-title">SQUARE PAC-MAN</div>
-    <div class="button-center button-play"  @click="gameStart">Play</div>
-  </div>
-
-  <!-- Game end -->
-  <div class="game_end" v-show="game_end">
-    <div class="big-title">{{title_end}}</div>
-    <div class="button-center button-play"  @click="gameStart">Again</div>
-  </div>
-
-
-
-
-</div>
-<script src="./script/script.js"></script>
-
-
-
+  <script src="./script/script.js"></script>
 </body>
-
-
 </html>

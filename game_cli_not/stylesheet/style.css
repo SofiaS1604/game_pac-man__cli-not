@@ -17,7 +17,6 @@
 
 .game_header-none{
   height: 80px;
-
 }
 
 .game_header-block{
@@ -25,7 +24,6 @@
   width: 690px;
   position: relative;
   border-bottom: 1px solid black;
-
 }
 
 .game_play{
@@ -52,7 +50,6 @@
   float: left;
   position: absolute;
   z-index: 1;
-
 }
 
 .square{
@@ -62,7 +59,6 @@
   position: absolute;
   z-index: 9;
 }
-
 
 .big-title{
   font-size: 50px;
@@ -91,7 +87,6 @@
   cursor: pointer;
 }
 
-
 .game_title{
   font-size: 30px;
   line-height: 80px;
@@ -100,7 +95,6 @@
   position: absolute;
   left: 0;
   right: 0;
-
 }
 
 .game_score{

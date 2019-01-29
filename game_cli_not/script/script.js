@@ -19,7 +19,7 @@ let game = new Vue({
         square_y: 0,
         target: null,
         score: 0,
-        circles: [0,1,2,3,4,5,6,7,8,9],
+        circle_number: [],
         game_end: false,
         title_end: ''
     },
@@ -36,6 +36,7 @@ let game = new Vue({
             this.square_x = 0;
             this.square_y = 0;
             this.game_end = false;
+            this.circle_number = [];
 
             for (let i = 1; i < 21; i++) {
                 this.levels.push(i);
@@ -81,7 +82,6 @@ let game = new Vue({
 
 
         gamePlay: function(id){
-
             this.target = id+35;
             this.gameTimer();
             this.game_level = false;
@@ -105,55 +105,42 @@ let game = new Vue({
             for(let i = 0; i < 10; i++ ){
                 let div = document.createElement('div');
                 div.className = 'circle circle-'+i;
-
                 let circles = document.getElementsByClassName('circles')[0];
-
                 circles.appendChild(div);
 
-
-               document.getElementsByClassName('circle-'+i)[0].style.top = this.circle_top[i]*15+'px';
-               document.getElementsByClassName('circle-'+i)[0].style.left = this.circle_left[i]*15+'px';
-
+                document.getElementsByClassName('circle-'+i)[0].style.top = this.circle_top[i]*15+'px';
+                document.getElementsByClassName('circle-'+i)[0].style.left = this.circle_left[i]*15+'px';
             }
-
-
-
-
-
         },
 
         changeCircle(){
 
-            let circles = document.getElementsByClassName('circles')[0];
-
-
-            for(let i = 0; i < 10; i++){
-                if(document.getElementsByClassName('circle'+i)[0]){
-                    let div = document.createElement('div');
-                    div.className = 'circle circle-'+i;
-                    circles.appendChild(div);
-
-                    console.log(document.getElementsByClassName('circle' + i)[0]);
+            if(this.circle_number !== [] ){
+                let charset = this.circle_number.length;
+                if(charset > 0){
+                    for(let i = 0; i < charset; i++){
+                        let circles = document.getElementsByClassName('circles')[0];
+                        let div = document.createElement('div');
+                        div.className = 'circle circle-'+this.circle_number[0];
+                        circles.appendChild(div);
+                        this.circle_number.splice(0, 1);
+                    }
+                }else{
+                    this.circle_number = [];
                 }
+
+
             }
 
-
             for(let i = 0; i < 10; i++){
-
                 this.circle_left[i] = Math.floor(Math.floor(Math.random() * 36));
                 this.circle_top[i] = Math.floor(Math.floor(Math.random() * 36));
 
-
-                if( document.getElementsByClassName('circle-'+i)[0]){
-
+                if(document.getElementsByClassName('circle-'+i)[0]){
                     document.getElementsByClassName('circle-'+i)[0].style.top = this.circle_top[i]*15+'px';
                     document.getElementsByClassName('circle-'+i)[0].style.left = this.circle_left[i]*15+'px';
-
                 }
-
             }
-
-
 
             setTimeout(() =>{
                 this.changeCircle();
@@ -165,27 +152,21 @@ let game = new Vue({
             let circles = document.getElementsByClassName('circles')[0];
 
             for(let i = 0; i < this.circle_left.length; i++ ) {
-                let circle = document.getElementsByClassName('circle-') + i;
-                if (circle) {
-                    if (this.circle_left[i] * 15 === this.square_x * 15 && this.circle_top[i] * 15 === this.square_y * 15) {
+                if (this.circle_left[i] * 15 === this.square_x * 15 && this.circle_top[i] * 15 === this.square_y * 15) {
 
-                        console.log(circles);
-                        circles.removeChild(document.getElementsByClassName('circle-' + i)[0]);
-                        
-                        console.log('=0');
-                        this.score += 1;
+                    this.circle_number.push(i);
+                    circles.removeChild(document.getElementsByClassName('circle-' + i)[0]);
 
+                    delete this.circle_top[i];
+                    delete this.circle_left[i];
 
-                    }
-                }else{
-                    console.log('difij');
+                    this.score += 1;
                 }
-
             }
 
             setTimeout(() =>{
                 this.scoreChange()
-            },25)
+            },10)
         },
 
 
