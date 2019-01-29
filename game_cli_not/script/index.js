@@ -101,14 +101,66 @@ let game = new Vue({
                 this.walls_left.push(((Math.floor(Math.random() * (left)) + 1)*105)-60);
             }
 
+            for(let i = 0; i < 10; i++ ){
+                let div = document.createElement('div');
+                div.className = 'circle circle-'+i;
+
+
+
+
+
+
+
+                let circles = document.getElementsByClassName('circles')[0];
+
+                circles.appendChild(div);
+
+                document.getElementsByClassName('circle-'+i)[0].style.top = this.circle_top[i]*15+'px';
+                document.getElementsByClassName('circle-'+i)[0].style.left = this.circle_left[i]*15+'px';
+
+            }
+
+           // console.log(document.getElementsByClassName('circle-' + 1)[0].style);
+
+
         },
 
         changeCircle(){
 
-            for(let i = 0; i < 11; i++){
-                this.circle_left[i] = Math.floor(Math.floor(Math.random() * 36));
-                this.circle_top[i] = Math.floor(Math.floor(Math.random() * 36));
+
+            let circles = document.getElementsByClassName('circles')[0];
+
+            if(document.getElementsByClassName('circle').length > 0){
+                for (let i = 0; i < 10; i++){
+                    circles.removeChild(document.getElementsByClassName('circle')[i]);
+                }
+
             }
+
+            for(let i = 0; i < 10; i++ ){
+                let div = document.createElement('div');
+                div.className = 'circle circle-'+i;
+
+                circles.appendChild(div);
+
+
+            }
+
+
+            for(let i = 0; i < 10; i++){
+
+
+                if( document.getElementsByClassName('circle-'+i)[0]){
+                    //console.log(this.circle_top[i]);
+                    document.getElementsByClassName('circle-'+i)[0].style.top = this.circle_top[i]*15+'px';
+                    document.getElementsByClassName('circle-'+i)[0].style.left = this.circle_left[i]*15+'px';
+
+
+                }
+
+            }
+
+
 
             setTimeout(() =>{
                 this.changeCircle();
