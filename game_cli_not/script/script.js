@@ -38,6 +38,16 @@ let game = new Vue({
             this.game_end = false;
             this.circle_number = [];
 
+            for(let i = 0; i < 10; i++ ){
+                let div = document.createElement('div');
+                div.className = 'circle circle-'+i;
+                let circles = document.getElementsByClassName('circles')[0];
+                circles.appendChild(div);
+
+                document.getElementsByClassName('circle-'+i)[0].style.top = this.circle_top[i]*15+'px';
+                document.getElementsByClassName('circle-'+i)[0].style.left = this.circle_left[i]*15+'px';
+            }
+
             for (let i = 1; i < 21; i++) {
                 this.levels.push(i);
             }
@@ -74,6 +84,8 @@ let game = new Vue({
             this.game_time = 90;
             this.game_end = true;
 
+            document.getElementsByClassName('circles')[0].innerHTML = '';
+
             if(this.target <= this.score)
                 this.title_end = 'You win!';
             else
@@ -101,21 +113,11 @@ let game = new Vue({
                 this.walls_left.push(((Math.floor(Math.random() * (left)) + 1)*105)-60);
             }
 
-
-            for(let i = 0; i < 10; i++ ){
-                let div = document.createElement('div');
-                div.className = 'circle circle-'+i;
-                let circles = document.getElementsByClassName('circles')[0];
-                circles.appendChild(div);
-
-                document.getElementsByClassName('circle-'+i)[0].style.top = this.circle_top[i]*15+'px';
-                document.getElementsByClassName('circle-'+i)[0].style.left = this.circle_left[i]*15+'px';
-            }
         },
 
         changeCircle(){
 
-            if(this.circle_number !== [] ){
+
                 let charset = this.circle_number.length;
                 if(charset > 0){
                     for(let i = 0; i < charset; i++){
@@ -130,7 +132,6 @@ let game = new Vue({
                 }
 
 
-            }
 
             for(let i = 0; i < 10; i++){
                 this.circle_left[i] = Math.floor(Math.floor(Math.random() * 36));
