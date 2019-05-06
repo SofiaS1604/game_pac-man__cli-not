@@ -34,6 +34,7 @@ let game = new Vue({
             this.walls_left = [];
             this.walls_top = [];
             this.square_x = 0;
+            this.id = 0;
             this.square_y = 0;
             this.game_end = false;
             this.circle_number = [];
@@ -95,24 +96,29 @@ let game = new Vue({
 
 
         gamePlay: function (id) {
+            this.id = id;
             this.target = id + 35;
             this.gameTimer();
             this.game_level = false;
             this.game_play = true;
             this.game_start = false;
+
+            for (let i = 0; i < 55; i++) {
+                let wall = document.getElementsByClassName('game_wall')[0];
+                let div = document.createElement('div');
+                div.className = 'wall wall-' + i;
+                wall.appendChild(div);
+
+            }
+
             this.changeCircle();
             this.scoreChange();
             this.title_end = '';
 
-            for (let i = 0; i < 55; i++) {
-                this.walls.push(i);
 
-                let left = Math.floor(Math.floor(Math.random() * (36 / 6)) + 1);
-                let top = Math.floor(Math.floor(Math.random() * (46 / 5)) + 1);
 
-                this.walls_top.push(((Math.floor(Math.random() * (top)) + 1) * 60) - 15);
-                this.walls_left.push(((Math.floor(Math.random() * (left)) + 1) * 105) - 60);
-            }
+
+
 
         },
 
@@ -133,6 +139,8 @@ let game = new Vue({
             }
 
 
+
+
             for (let i = 0; i < 10; i++) {
                 this.circle_left[i] = Math.floor(Math.floor(Math.random() * 36));
                 this.circle_top[i] = Math.floor(Math.floor(Math.random() * 36));
@@ -142,6 +150,26 @@ let game = new Vue({
                     document.getElementsByClassName('circle-' + i)[0].style.left = this.circle_left[i] * 15 + 'px';
                 }
             }
+
+            this.target = this.id + 35;
+
+            this.walls_top = [];
+            this.walls_left = [];
+
+            for (let i = 0; i < 55; i++) {
+                this.walls.push(i);
+
+                let left = Math.floor(Math.floor(Math.random() * (36 / 6)) + 1);
+                let top = Math.floor(Math.floor(Math.random() * (46 / 5)) + 1);
+
+                this.walls_top.push(((Math.floor(Math.random() * (top)) + 1) * 60) - 15);
+                this.walls_left.push(((Math.floor(Math.random() * (left)) + 1) * 105) - 60);
+
+
+                document.getElementsByClassName('wall-'+i)[0].style.left = this.walls_left[i]+'px';
+                document.getElementsByClassName('wall-'+i)[0].style.top = this.walls_top[i]+'px';
+            }
+
 
             setTimeout(() => {
                 this.changeCircle();
@@ -258,8 +286,3 @@ let game = new Vue({
     },
 
 });
-
-
-
-
-

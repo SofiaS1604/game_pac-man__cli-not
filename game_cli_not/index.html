@@ -35,9 +35,7 @@
       </div>
 
       <!-- Blocks -->
-      <div class="game_wall">
-        <div class="wall"  v-for="wall in walls" :style="{left: walls_left[wall] + 'px', top: walls_top[wall]+ 'px'}"></div>
-      </div>
+      <div class="game_wall"></div>
 
       <div class="square" :style="{left: square_x*15 + 'px', top: square_y*15 + 'px'}"></div>
       <div class="circles"></div>
