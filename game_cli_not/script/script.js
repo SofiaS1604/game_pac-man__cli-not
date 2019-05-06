@@ -1,11 +1,11 @@
 let game = new Vue({
     el: '.game',
-    data:{
+    data: {
         game_start: true,
         game_level: false,
         game_play: false,
         game_time: 90,
-        min : null,
+        min: null,
         sec: null,
         levels: [],
         walls: [],
@@ -38,14 +38,14 @@ let game = new Vue({
             this.game_end = false;
             this.circle_number = [];
 
-            for(let i = 0; i < 10; i++ ){
+            for (let i = 0; i < 10; i++) {
                 let div = document.createElement('div');
-                div.className = 'circle circle-'+i;
+                div.className = 'circle circle-' + i;
                 let circles = document.getElementsByClassName('circles')[0];
                 circles.appendChild(div);
 
-                document.getElementsByClassName('circle-'+i)[0].style.top = this.circle_top[i]*15+'px';
-                document.getElementsByClassName('circle-'+i)[0].style.left = this.circle_left[i]*15+'px';
+                document.getElementsByClassName('circle-' + i)[0].style.top = this.circle_top[i] * 15 + 'px';
+                document.getElementsByClassName('circle-' + i)[0].style.left = this.circle_left[i] * 15 + 'px';
             }
 
             for (let i = 1; i < 21; i++) {
@@ -57,10 +57,10 @@ let game = new Vue({
             if (this.game_time > 0) {
 
                 this.game_time--;
-                this.min =  Math.floor(this.game_time / 60);
+                this.min = Math.floor(this.game_time / 60);
                 this.sec = this.game_time - ((Math.floor(this.game_time / 60)) * 60);
 
-                if(this.min < 10 ){
+                if (this.min < 10) {
                     this.min = '0' + this.min;
                 }
 
@@ -72,7 +72,7 @@ let game = new Vue({
                     this.gameTimer();
                 }, 1000);
 
-            }else {
+            } else {
                 this.gameOver();
             }
         },
@@ -82,19 +82,20 @@ let game = new Vue({
             this.game_play = false;
             this.game_level = false;
             this.game_time = 90;
+            this.score = 0;
             this.game_end = true;
 
             document.getElementsByClassName('circles')[0].innerHTML = '';
 
-            if(this.target <= this.score)
+            if (this.target <= this.score)
                 this.title_end = 'You win!';
             else
                 this.title_end = 'You lose!'
         },
 
 
-        gamePlay: function(id){
-            this.target = id+35;
+        gamePlay: function (id) {
+            this.target = id + 35;
             this.gameTimer();
             this.game_level = false;
             this.game_play = true;
@@ -103,56 +104,55 @@ let game = new Vue({
             this.scoreChange();
             this.title_end = '';
 
-            for (let i = 0; i < 55 ; i++) {
+            for (let i = 0; i < 55; i++) {
                 this.walls.push(i);
 
-                let left = Math.floor(Math.floor(Math.random() * (36/6)) + 1);
-                let top = Math.floor(Math.floor(Math.random() * (46/5)) + 1);
+                let left = Math.floor(Math.floor(Math.random() * (36 / 6)) + 1);
+                let top = Math.floor(Math.floor(Math.random() * (46 / 5)) + 1);
 
-                this.walls_top.push(((Math.floor(Math.random() * (top)) + 1)*60)-15);
-                this.walls_left.push(((Math.floor(Math.random() * (left)) + 1)*105)-60);
+                this.walls_top.push(((Math.floor(Math.random() * (top)) + 1) * 60) - 15);
+                this.walls_left.push(((Math.floor(Math.random() * (left)) + 1) * 105) - 60);
             }
 
         },
 
-        changeCircle(){
+        changeCircle() {
 
 
-                let charset = this.circle_number.length;
-                if(charset > 0){
-                    for(let i = 0; i < charset; i++){
-                        let circles = document.getElementsByClassName('circles')[0];
-                        let div = document.createElement('div');
-                        div.className = 'circle circle-'+this.circle_number[0];
-                        circles.appendChild(div);
-                        this.circle_number.splice(0, 1);
-                    }
-                }else{
-                    this.circle_number = [];
+            let charset = this.circle_number.length;
+            if (charset > 0) {
+                for (let i = 0; i < charset; i++) {
+                    let circles = document.getElementsByClassName('circles')[0];
+                    let div = document.createElement('div');
+                    div.className = 'circle circle-' + this.circle_number[0];
+                    circles.appendChild(div);
+                    this.circle_number.splice(0, 1);
                 }
+            } else {
+                this.circle_number = [];
+            }
 
 
-
-            for(let i = 0; i < 10; i++){
+            for (let i = 0; i < 10; i++) {
                 this.circle_left[i] = Math.floor(Math.floor(Math.random() * 36));
                 this.circle_top[i] = Math.floor(Math.floor(Math.random() * 36));
 
-                if(document.getElementsByClassName('circle-'+i)[0]){
-                    document.getElementsByClassName('circle-'+i)[0].style.top = this.circle_top[i]*15+'px';
-                    document.getElementsByClassName('circle-'+i)[0].style.left = this.circle_left[i]*15+'px';
+                if (document.getElementsByClassName('circle-' + i)[0]) {
+                    document.getElementsByClassName('circle-' + i)[0].style.top = this.circle_top[i] * 15 + 'px';
+                    document.getElementsByClassName('circle-' + i)[0].style.left = this.circle_left[i] * 15 + 'px';
                 }
             }
 
-            setTimeout(() =>{
+            setTimeout(() => {
                 this.changeCircle();
-            },5000)
+            }, 5000)
         },
 
-        scoreChange(){
+        scoreChange() {
 
             let circles = document.getElementsByClassName('circles')[0];
 
-            for(let i = 0; i < this.circle_left.length; i++ ) {
+            for (let i = 0; i < this.circle_left.length; i++) {
                 if (this.circle_left[i] * 15 === this.square_x * 15 && this.circle_top[i] * 15 === this.square_y * 15) {
 
                     this.circle_number.push(i);
@@ -165,76 +165,75 @@ let game = new Vue({
                 }
             }
 
-            setTimeout(() =>{
+            setTimeout(() => {
                 this.scoreChange()
-            },10)
+            }, 10)
         },
 
 
-        left(){
-            if(this.square_x > 0){
+        left() {
+            if (this.square_x > 0) {
                 let counter = 0;
 
-                for(let i = 0; i < this.walls.length; i++ ){
-                    if((this.walls_top[i] === this.square_y*15 || this.walls_top[i]+15 === this.square_y*15) && this.walls_left[i]+30 === this.square_x*15){
+                for (let i = 0; i < this.walls.length; i++) {
+                    if ((this.walls_top[i] === this.square_y * 15 || this.walls_top[i] + 15 === this.square_y * 15) && this.walls_left[i] + 30 === this.square_x * 15) {
                         counter = 1;
                     }
                 }
 
-                if(counter !== 1){
-                    this.square_x --;
+                if (counter !== 1) {
+                    this.square_x--;
                 }
             }
         },
 
-        top(){
-            if(this.square_y > 0){
+        top() {
+            if (this.square_y > 0) {
                 let counter = 0;
 
-                for(let i = 0; i < this.walls_left.length; i++ ){
-                    if(this.walls_top[i]+30 === this.square_y*15 && (this.walls_left[i] === this.square_x*15 || this.walls_left[i]+15 === this.square_x*15)){
+                for (let i = 0; i < this.walls_left.length; i++) {
+                    if (this.walls_top[i] + 30 === this.square_y * 15 && (this.walls_left[i] === this.square_x * 15 || this.walls_left[i] + 15 === this.square_x * 15)) {
                         counter = 1;
                     }
                 }
 
-                if(counter !== 1){
-                    this.square_y --;
+                if (counter !== 1) {
+                    this.square_y--;
                 }
             }
         },
 
-        right(){
-            if(this.square_x < this.cell - 1){
+        right() {
+            if (this.square_x < this.cell - 1) {
                 let counter = 0;
 
-                for(let i = 0; i < this.walls.length; i++ ){
-                    if((this.walls_top[i] === this.square_y*15 || this.walls_top[i]+15 === this.square_y*15) && this.walls_left[i]-15 === this.square_x*15  ) {
+                for (let i = 0; i < this.walls.length; i++) {
+                    if ((this.walls_top[i] === this.square_y * 15 || this.walls_top[i] + 15 === this.square_y * 15) && this.walls_left[i] - 15 === this.square_x * 15) {
                         counter = 1;
                     }
                 }
 
-                if(counter !== 1){
-                    this.square_x ++;
+                if (counter !== 1) {
+                    this.square_x++;
                 }
             }
         },
 
-        bottom(){
-            if(this.square_y < this.row -1){
+        bottom() {
+            if (this.square_y < this.row - 1) {
                 let counter = 0;
 
-                for(let i = 0; i < this.walls.length; i++ ){
-                    if(this.walls_top[i]-15 === this.square_y*15 && (this.walls_left[i] === this.square_x*15 || this.walls_left[i]+15 === this.square_x*15)) {
+                for (let i = 0; i < this.walls.length; i++) {
+                    if (this.walls_top[i] - 15 === this.square_y * 15 && (this.walls_left[i] === this.square_x * 15 || this.walls_left[i] + 15 === this.square_x * 15)) {
                         counter = 1;
                     }
                 }
 
-                if(counter !== 1){
-                    this.square_y ++;
+                if (counter !== 1) {
+                    this.square_y++;
                 }
             }
         },
-
 
         run: function (e) {
             switch (e.keyCode) {
@@ -254,7 +253,7 @@ let game = new Vue({
         }
     },
 
-    mounted(){
+    mounted() {
         window.addEventListener('keydown', this.run);
     },
 
