@@ -101,7 +101,7 @@ let positionCircle = () => {
         let circle_top = Math.floor(circle_left * Math.tan(angle) - ((9.81) / (2 * speedBird * speedBird * Math.cos(angle) * Math.cos(angle)) * circle_left * circle_left));
         classCircle += 1;
 
-        if(circle_top + 350 > 140){
+        if(circle_top + 350 > 140  && circle_left < window.innerWidth){
             let div = document.createElement('div');
             div.className = 'circle circle-'+classCircle;
             div.style.left = circle_left+200 + 'px';
