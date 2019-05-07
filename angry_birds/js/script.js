@@ -146,7 +146,7 @@ let runBird = () =>{
             document.querySelector('.circle-'+j).classList.remove('circle');
             j++;
 
-            caliziaBird(positionBottom_bird[j], positionLeft_bird[j]);
+            caliziaBird();
 
         }else{
             clearTimeout(runBird);
@@ -156,7 +156,7 @@ let runBird = () =>{
     },38)
 };
 
-let caliziaBird = (y, x) => {
+let caliziaBird = () => {
     let boxs_length = document.querySelectorAll('.boxs__box').length;
     let bird = document.querySelector('.game-play__bird-red');
     for(let i = 0; i < boxs_length; i++){
