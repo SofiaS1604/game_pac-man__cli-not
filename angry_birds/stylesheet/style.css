@@ -1,0 +1,194 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Monaco', monospace;
+}
+
+.game{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Game Start */
+
+.game__game-start{
+    background-image: url("../images/angry_birds.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.game__button-play{
+    width: 250px;
+    height: 75px;
+    background-color: #f8bd45;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    margin-top: 80vh;
+    border: 5px solid white;
+    border-radius: 10px;
+    font-size: 35px;
+    align-items: center;
+    box-shadow: 5px 5px 10px #000;
+    cursor: pointer;
+}
+
+.game__button-play:hover{
+    box-shadow: 2px 2px 5px #000;
+}
+
+/* Gama Play */
+
+.game__game-play{
+    display: none;
+}
+
+.game-play__grass{
+    background-image: url("../images/field.png");
+    width: 100vw;
+    height: 45vh;
+    margin-top: 55vh;
+    background-size: auto 100%;
+    background-position: center;
+}
+
+.game-play__shot{
+    background-image: url(../images/shot.png);
+    background-size: cover;
+    width: 100px;
+    height: 250px;
+    position: absolute;
+    left: 100px;
+    bottom: 15vh;
+}
+
+.game-play__bird-red{
+    background-image: url("../images/red_bird.png");
+    width: 85px;
+    height: 85px;
+    background-size: cover;
+    position: absolute;
+    left: 8vw;
+    bottom: 38vh;
+}
+
+.game-play__buttons{
+    position: absolute;
+    bottom: 25px;
+    left: 250px;
+}
+
+.game-play__button{
+    width: 100px;
+    height: 50px;
+    background-color: rgba(255,255,255, 0.8);
+    font-size: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.game-play__button_left{
+    font-size: 31px;
+    left: 50px;
+    bottom: 26px;
+    cursor: pointer;
+}
+.game-play__button_top{
+    font-size: 33px;
+    bottom: 52px;
+    left: 152px;
+    cursor: pointer;
+}
+
+.game-play__button_right{
+    left: 254px;
+    bottom: 26px;
+    cursor: pointer;
+}
+
+.game-play__button_bottom{
+    left: 152px;
+    bottom: 0;
+    cursor: pointer;
+}
+
+.game-play__button-run{
+    bottom: 25px;
+    left: 450px;
+    cursor: pointer;
+}
+
+.game-play__time{
+    position: absolute;
+    font-size: 21px;
+    top: 10px;
+    right: 50vw;
+}
+
+.game-play__score{
+    position: absolute;
+    font-size: 21px;
+    top: 10px;
+    left: 5vw;
+}
+
+.game-play__header{
+    border-bottom: 1px solid black;
+    width: 100vw;
+    top: 0;
+    position: absolute;
+    height:50px;
+}
+
+.boxs__box{
+    background-image: url("../images/block_tnt.png");
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 125px;
+    left: 1300px;
+}
+
+
+
+.boxs__box-5{
+    left: 1150px;
+    top: 564px;
+}
+
+.boxs__box-4{
+    left: 1000px;
+    top: 564px;
+}
+
+.boxs__box-3{
+    left: 1225px;
+    top: 469px;
+}
+
+.boxs__box-2{
+    left: 1075px;
+    top: 469px;
+}
+
+.boxs__box-1{
+    left: 1150px;
+    top: 379px;
+}
+
+.circle{
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: red;
+    border-radius: 50%;
+}
