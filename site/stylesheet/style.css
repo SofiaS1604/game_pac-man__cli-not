@@ -239,7 +239,10 @@ li{
 }
 
 .container{
-    margin-top: 75px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 50px;
 }
 
 .main_image{
@@ -251,6 +254,7 @@ li{
     margin-left: 75px;
     float: left;
     margin-right: 75px;
+    object-fit: contain;
 }
 
 .container__text{
