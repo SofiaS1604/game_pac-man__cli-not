@@ -269,8 +269,8 @@ li{
     margin-bottom: 15px;
 }
 
-.block{
-    margin-top: 5px;
+.block+.block{
+    margin-top: 10px;
 }
 
 .search{
@@ -621,7 +621,7 @@ header .search__magnifier{
     font-weight: 100;
     color: #ffffff;
     margin-left: 50px;
-    text-align: center;
+    /*text-align: center;*/
     margin-top: 20px;
 }
 
