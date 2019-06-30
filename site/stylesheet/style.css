@@ -580,13 +580,13 @@ header .search__magnifier{
     height: 33px;
 }
 
-.section-maths__side-panel{
+.section__side-panel{
     border-right: 1px solid #979797;
     padding-right: 25px;
     padding-bottom: 20px;
 }
 
-.section-maths{
+.section{
     margin-top: 50px;
     display: flex;
     flex-direction: row;
@@ -594,7 +594,7 @@ header .search__magnifier{
     margin-bottom: 100px;
 }
 
-.section-maths__classes{
+.section__classes{
     display: flex;
     flex-direction: column;
     font-size: 21px;
@@ -604,7 +604,7 @@ header .search__magnifier{
     padding-bottom: 25px;
 }
 
-.section-maths__class, .section-maths__task{
+.section__class, .section__task{
     font-size: 21px;
     font-weight: 100;
     color: #fff;
@@ -612,15 +612,24 @@ header .search__magnifier{
     width: 215px;
     text-align: center;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all 0.2s;
 }
 
-.section-maths__class:hover, .section-maths__task:hover{
+.section__tasks{
+    display: flex;
+    flex-direction: column;
+}
+
+.section__class:hover, .section__task:hover{
     color: #42C8CC;
 }
 
-.section-maths__block{
-    width: calc(100vw - 400px);
+.section__class--active{
+    color: #42C8CC;
+}
+
+.section__block{
+    width: calc(100vw - 425px);
     font-size: 21px;
     font-weight: 100;
     color: #ffffff;
@@ -629,19 +638,20 @@ header .search__magnifier{
     margin-top: 20px;
 }
 
-.section-maths__block--5class{
+.section__block--class{
     display: none;
     flex-direction: column;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
+    margin-left: 75px;
 }
 
-.section-maths__sheet{
+.section__sheet{
     margin-bottom: 20px;
     transition: all 0.3s;
     cursor: pointer;
 }
 
-.section-maths__sheet:hover{
+.section__sheet:hover{
     color: #42C8CC;
 }
 

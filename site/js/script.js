@@ -27,9 +27,22 @@ if (document.getElementsByClassName('profile')[0]){
     });
 }
 
-if(document.querySelector('.section-maths__classes')){
-    document.getElementsByClassName('section-maths__class')[0].addEventListener('click', () =>{
-        document.querySelector('.section-maths__block--about').style.display = 'none';
-        document.querySelector('.section-maths__block--5class').style.display = 'flex'
-    })
-}
+
+
+$(document).ready(function () {
+    let new_id;
+    $('.section__classes').delegate('a', 'click', function(e) {
+        e.preventDefault();
+        if(new_id !== undefined){
+            document.getElementsByClassName('section__class')[new_id].classList.remove('section__class--active');
+        }
+        for (let i = 0; i < document.querySelectorAll('.section__block').length; i++){
+            document.getElementsByClassName('section__block')[i].style.display = 'none';
+        }
+        document.getElementsByClassName('section__block')[$(this).index() + 1].style.display = 'flex';
+        document.getElementsByClassName('section__class')[$(this).index()].classList.add('section__class--active');
+
+        new_id = $(this).index();
+    });
+
+});
