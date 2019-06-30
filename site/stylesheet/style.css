@@ -531,7 +531,7 @@ li{
     flex-direction: column;
     padding-left: 50px;
     padding-right: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 25px;
 }
 
 .log-in__title{
