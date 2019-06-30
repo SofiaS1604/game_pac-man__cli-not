@@ -421,9 +421,7 @@ li{
     display: flex;
     overflow: hidden;
     padding-bottom: 50px;
-    width: 620px;
     margin-bottom: 50px;
-    margin-right: 50px;
 }
 
 .employee__images{
@@ -435,15 +433,14 @@ li{
 .employee__block{
     display: flex;
     flex-direction: column;
-    width: 25vw;
+    width: 350px;
     overflow: hidden;
-    margin-right: 40px;
 }
 
 .employee__text{
     font-weight: 100;
     font-size: 21px;
-    width: 270px;
+    width: 500px;
     color: #fff;
     overflow: hidden;
     margin-top: 50px;
@@ -459,6 +456,14 @@ li{
     text-decoration: underline;
     padding: 0 25px 5px;
     letter-spacing: 1.8px;
+}
+
+.employee-linguistics{
+    display: none;
+}
+
+.employee-informatics{
+    display: none;
 }
 
 .contacts{
@@ -590,7 +595,6 @@ header .search__magnifier{
     margin-top: 50px;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     margin-bottom: 100px;
 }
 
@@ -629,13 +633,17 @@ header .search__magnifier{
 }
 
 .section__block{
-    width: calc(100vw - 425px);
     font-size: 21px;
     font-weight: 100;
     color: #ffffff;
     margin-left: 50px;
     /*text-align: center;*/
     margin-top: 20px;
+}
+
+.section__block--about{
+    display: flex;
+    flex-direction: column;
 }
 
 .section__block--class{
