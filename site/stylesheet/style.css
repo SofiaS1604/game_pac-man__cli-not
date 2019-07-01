@@ -428,6 +428,7 @@ li{
     height: 250px;
     width: 250px;
     object-fit: cover;
+    object-position: top;
     margin: 50px 35px 35px 50px;
 }
 
