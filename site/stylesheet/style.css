@@ -427,6 +427,7 @@ li{
 .employee__images{
     height: 250px;
     width: 250px;
+    object-fit: cover;
     margin: 50px 35px 35px 50px;
 }
 
