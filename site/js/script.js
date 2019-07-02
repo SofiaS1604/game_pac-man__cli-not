@@ -30,4 +30,10 @@ $(document).ready(function () {
         newEmployees = $(this).index();
     });
 
+    $('.log-in__button').click(() => {
+        if(document.getElementsByClassName('log-in__input')[0].value === '123' && document.getElementsByClassName('log-in__input')[1].value === '123'){
+            window.location="https://sofias1604.github.io/game_pac-man__cli-not/site/log_in-admin.html";
+        }
+    })
 });
+
