@@ -568,6 +568,10 @@ li{
     font-size: 21px;
     font-weight: 100;
     color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
     cursor: pointer;
 }
 
