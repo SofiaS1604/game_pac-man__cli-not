@@ -894,4 +894,20 @@ footer{
         height: 75px;
         width: 65px;
     }
+
+    .section__block--about{
+        font-size: 25px;
+    }
+
+    .menu__navigation{
+        top: 85px;
+    }
+
+    .menu__maths{
+        top: -13.5px;
+    }
+
+    .menu-section{
+        top: -43px;
+    }
 }
