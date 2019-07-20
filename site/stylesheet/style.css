@@ -903,11 +903,11 @@ footer{
         top: 85px;
     }
 
-    .menu__maths{
-        top: -13.5px;
+    .menu-maths{
+        left: -13.5px;
     }
 
     .menu-section{
-        top: -43px;
+        left: -43px;
     }
 }
