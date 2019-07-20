@@ -945,7 +945,14 @@ footer .section__task{
         font-size: 28px;
     }
 
+    footer{
+        display: flex;
+    }
+    
     footer .section__task{
-        display: block;
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        font-size: 28px;
     }
 }
