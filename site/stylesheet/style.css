@@ -891,6 +891,7 @@ footer{
 
     .section__class{
         font-size: 28px;
+        width: 250px;
     }
 
     .menu__submenu_item{
