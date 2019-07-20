@@ -849,7 +849,9 @@ footer{
     content: '';
 }
 
-
+footer .section__task{
+    display: none;
+}
 
 @media screen and (max-width: 1068px){
     /*.navigation__mobile{*/
@@ -937,5 +939,13 @@ footer{
         border-bottom: 0;
         padding-left: 10px;
         padding-right: 10px;
+    }
+
+    .section__sheet{
+        font-size: 28px;
+    }
+
+    footer .section__task{
+        display: block;
     }
 }
