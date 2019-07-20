@@ -813,20 +813,20 @@ footer{
 }
 
 .section__menu, .section__menu:after, .section__menu:before{
-    width: 45px;
-    height: 5px;
+    width: 40px;
+    height: 4px;
     background: white;
 }
 
 .section__menu:after{
     position: absolute;
-    top: -15px;
+    top: -13px;
     content: '';
 }
 
 .section__menu:before{
     position: absolute;
-    top: 15px;
+    top: 13px;
     content: '';
 }
 
