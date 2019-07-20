@@ -62,16 +62,16 @@ if(document.querySelector('.employees')){
     })
 }
 
-if(document.querySelector('.navigation__mobile')){
+if(document.querySelector('.section__menu')){
     let active = 0;
-    document.querySelector('.navigation__mobile').addEventListener('click', () => {
+    document.querySelector('.section__menu').addEventListener('click', () => {
         if (active === 0){
-            document.querySelector('.navigation__mobile').classList.add('navigation__mobile--active');
-            document.querySelector('.navigation_ul').style.display = 'flex';
+            document.querySelector('.section__menu').classList.add('section__menu--active');
+            document.querySelector('.section__classes').style.display = 'flex';
             active = 1;
         }else{
-            document.querySelector('.navigation__mobile').classList.remove('navigation__mobile--active');
-            document.querySelector('.navigation_ul').style.display = 'flex';
+            document.querySelector('.section__menu').classList.remove('section__menu--active');
+            document.querySelector('.section__classes').style.display = 'none';
             active = 0;
         }
     })
