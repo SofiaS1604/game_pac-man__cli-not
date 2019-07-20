@@ -37,3 +37,42 @@ $(document).ready(function () {
     })
 });
 
+if(document.querySelector('.employees')){
+    document.getElementsByClassName('employees__button')[0].addEventListener('click', (e) => {
+        e.preventDefault();
+        let employees__addFio = document.getElementsByClassName('employees__input')[0];
+        let employees__addImage = document.querySelector('.employees__file');
+        let employees__addAbout = document.getElementsByClassName('employees__textarea')[0];
+        let employees__addPlace = document.getElementsByClassName('employees__select')[0];
+
+        if(!employees__addFio.value || !employees__addImage.value || !employees__addAbout.value || !employees__addPlace.value){
+            if(!employees__addFio.value ){
+                employees__addFio.style.border = '1px solid red';
+            }
+            if(!employees__addImage.value ){
+                employees__addImage.style.border = '1px solid red';
+            }
+            if(!employees__addAbout.value ){
+                employees__addAbout.style.border = '1px solid red';
+            }
+            if(employees__addPlace.value === 'Выберите место'){
+                employees__addPlace.style.border = '1px solid red';
+            }
+        }
+    })
+}
+
+if(document.querySelector('.navigation__mobile')){
+    let active = 0;
+    document.querySelector('.navigation__mobile').addEventListener('click', () => {
+        if (active === 0){
+            document.querySelector('.navigation__mobile').classList.add('navigation__mobile--active');
+            document.querySelector('.navigation_ul').style.display = 'flex';
+            active = 1;
+        }else{
+            document.querySelector('.navigation__mobile').classList.remove('navigation__mobile--active');
+            document.querySelector('.navigation_ul').style.display = 'flex';
+            active = 0;
+        }
+    })
+}

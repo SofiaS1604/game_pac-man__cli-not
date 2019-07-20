@@ -472,6 +472,49 @@ li{
     display: none;
 }
 
+.navigation__mobile{
+    position: relative;
+    display: none;
+}
+
+.navigation__mobile, .navigation__mobile:after, .navigation__mobile:before{
+    width: 33px;
+    height: 3px;
+    background: white;
+}
+
+.navigation__mobile:after{
+    position: absolute;
+    top: -10px;
+    content: '';
+}
+
+.navigation__mobile:before{
+    position: absolute;
+    top: 10px;
+    content: '';
+}
+
+.navigation__mobile--active{
+    background-color: transparent;
+}
+
+
+.navigation__mobile--active:after{
+    position: absolute;
+    top: 0;
+    content: '';
+    transform:rotate(135deg);
+}
+
+.navigation__mobile--active:before{
+    position: absolute;
+    top: 0;
+    transform:rotate(-135deg);
+    content: '';
+}
+
+
 .contacts{
     margin-top: 50px;
     display: flex;
@@ -652,7 +695,6 @@ li{
     cursor: pointer;
 }
 
-
 .menu_search{
     justify-content: flex-start;
     width: calc(100vw - 300px);
@@ -678,6 +720,8 @@ header .search__magnifier{
     padding-right: 25px;
     padding-bottom: 20px;
 }
+
+
 
 .section{
     margin-top: 50px;
@@ -758,4 +802,71 @@ footer{
     margin-left: 50px;
     margin-right: 50px;
     margin-top: 50px;
+}
+
+.section__mobile{
+    display: none;
+}
+
+.section__menu{
+    position: relative;
+}
+
+.section__menu, .section__menu:after, .section__menu:before{
+    width: 33px;
+    height: 3px;
+    background: white;
+}
+
+.section__menu:after{
+    position: absolute;
+    top: -10px;
+    content: '';
+}
+
+.section__menu:before{
+    position: absolute;
+    top: 10px;
+    content: '';
+}
+
+
+@media screen and (max-width: 1068px){
+    /*.navigation__mobile{*/
+    /*    display: block;*/
+    /*}*/
+
+    /*.navigation_ul{*/
+    /*    display: none;*/
+    /*}*/
+
+    .section__side-panel{
+        display: none;
+    }
+
+    .section__mobile{
+        display: flex;
+    }
+
+    .section__classes{
+        display: none;
+    }
+
+    .section__side-panel{
+        border-right: 0;
+        padding-right: 0;
+    }
+
+    .section__block--about{
+        margin-top: 35px;
+        margin-left: 35px;
+    }
+
+    .menu_search .navigation_ul{
+        display: flex;
+    }
+
+    .search{
+        display: none;
+    }
 }
