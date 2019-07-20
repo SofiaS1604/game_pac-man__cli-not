@@ -890,7 +890,7 @@ footer{
     }
 
     .section__class{
-        font-size: 25px;
+        font-size: 28px;
     }
 
     .menu__submenu_item{
@@ -915,7 +915,7 @@ footer{
     }
 
     .section__block--about{
-        font-size: 25px;
+        font-size: 28px;
     }
 
     .menu__navigation{
@@ -934,5 +934,7 @@ footer{
         background: #131E2B;
         margin-top: 25px;
         border-bottom: 0;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
