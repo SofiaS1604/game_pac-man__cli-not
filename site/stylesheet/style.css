@@ -869,4 +869,29 @@ footer{
     .search{
         display: none;
     }
+
+    .section__class{
+        font-size: 25px;
+    }
+
+    .menu__submenu_item{
+        font-size: 25px;
+    }
+
+    .menu__navigation_item{
+        font-size: 25px;
+    }
+
+    .navigation_item{
+        font-size: 25px;
+    }
+
+    header{
+        height: 100px;
+    }
+
+    .logo{
+        height: 80px;
+        width: 70px;
+    }
 }
