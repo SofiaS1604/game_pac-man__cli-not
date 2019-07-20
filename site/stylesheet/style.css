@@ -875,15 +875,15 @@ footer{
     }
 
     .menu__submenu_item{
-        font-size: 25px;
+        font-size: 28px;
     }
 
     .menu__navigation_item{
-        font-size: 25px;
+        font-size: 28px;
     }
 
     .navigation_item{
-        font-size: 25px;
+        font-size: 28px;
     }
 
     header{
@@ -891,7 +891,7 @@ footer{
     }
 
     .logo{
-        height: 80px;
-        width: 70px;
+        height: 75px;
+        width: 65px;
     }
 }
