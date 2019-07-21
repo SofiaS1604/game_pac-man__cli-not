@@ -871,6 +871,7 @@ footer .section__task{
 
     .section__mobile{
         display: flex;
+        z-index: 1;
     }
 
     .section__classes{
@@ -948,7 +949,7 @@ footer .section__task{
     footer{
         display: flex;
     }
-    
+
     footer .section__task{
         display: flex;
         flex: 1;

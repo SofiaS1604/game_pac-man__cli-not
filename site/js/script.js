@@ -69,10 +69,20 @@ if(document.querySelector('.section__menu')){
             document.querySelector('.section__menu').classList.add('section__menu--active');
             document.querySelector('.section__classes').style.display = 'flex';
             active = 1;
+            if(document.querySelector('.section__block')){
+                for (let i = 0; i < document.querySelectorAll('.section__block').length; i++){
+                    document.getElementsByClassName('section__block')[i].style.marginLeft = '-230px';
+                }
+            }
         }else{
             document.querySelector('.section__menu').classList.remove('section__menu--active');
             document.querySelector('.section__classes').style.display = 'none';
             active = 0;
+            if(document.querySelector('.section__block')){
+                for (let i = 0; i < document.querySelectorAll('.section__block').length; i++){
+                    document.getElementsByClassName('section__block')[i].style.marginLeft = '50px';
+                }
+            }
         }
     })
 }
