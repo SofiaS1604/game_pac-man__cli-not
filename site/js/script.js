@@ -71,7 +71,7 @@ if(document.querySelector('.section__menu')){
             active = 1;
             if(document.querySelector('.section__block')){
                 for (let i = 0; i < document.querySelectorAll('.section__block').length; i++){
-                    document.getElementsByClassName('section__block')[i].style.marginLeft = '-230px';
+                    document.getElementsByClassName('section__block')[i].style.marginLeft = '-180px';
                 }
             }
         }else{
