@@ -948,6 +948,7 @@ footer .section__task{
 
     footer{
         display: flex;
+        height: 85px;
     }
 
     footer .section__task{
