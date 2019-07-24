@@ -957,4 +957,16 @@ footer .section__task{
         justify-content: center;
         font-size: 28px;
     }
+    
+    .form__input{
+        font-size: 28px;
+        width: 62vw;
+        height: 50px;
+    }
+
+
+    .profile{
+        font-size: 25px;
+        height: 50px;
+    }
 }
