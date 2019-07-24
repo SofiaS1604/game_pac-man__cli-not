@@ -990,4 +990,13 @@ footer .section__task{
     .employee__title{
         font-size: 25px;
     }
+    .form__title{
+        font-size: 30px;
+    }
+    
+    .form__button{
+        width: 250px;
+        height: 50px;
+        font-size: 23px;
+    }
 }
