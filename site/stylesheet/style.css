@@ -853,14 +853,20 @@ footer .section__task{
     display: none;
 }
 
-@media screen and (max-width: 1068px){
-    /*.navigation__mobile{*/
-    /*    display: block;*/
-    /*}*/
+.form__button{
+    width: 225px;
+    margin: 25px auto 0;
+    height: 40px;
+    background: #1B2735;
+    font-size: 21px;
+    font-weight: 100;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
 
-    /*.navigation_ul{*/
-    /*    display: none;*/
-    /*}*/
+
+@media screen and (max-width: 1068px){
 
     .section__side-panel{
         display: none;
@@ -876,12 +882,6 @@ footer .section__task{
 
     .section__classes{
         display: none;
-    }
-
-
-    .section__block--about{
-        margin-top: 35px;
-        margin-left: 35px;
     }
 
     .menu_search .navigation_ul{
@@ -946,9 +946,12 @@ footer .section__task{
         font-size: 28px;
     }
 
+    .section__block{
+        margin-top: 35px;
+    }
+
     footer{
         display: flex;
-        height: 85px;
     }
 
     footer .section__task{
@@ -956,39 +959,35 @@ footer .section__task{
         flex: 1;
         justify-content: center;
         font-size: 28px;
+        padding-bottom: 10px;
     }
-    
+
     .form__input{
         font-size: 28px;
         width: 62vw;
         height: 50px;
     }
 
-
-    .profile{
-        font-size: 25px;
-        height: 50px;
-    }
-    
     .form__textarea{
         width: 62vw;
         height: 120px;
+        font-size: 28px;
     }
 
     .contacts img{
         display: none;
     }
-    
-    .form__button{
-    width: 225px;
-    margin: 25px auto 0;
-    height: 40px;
-    background: #1B2735;
-    font-size: 21px;
-    font-weight: 100;
-    color: #fff;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-}
 
+    .profile{
+        font-size: 25px;
+        height: 50px;
+    }
+
+    .contacts__form{
+        margin-top: 50px;
+    }
+
+    .employee__title{
+        font-size: 25px;
+    }
 }
