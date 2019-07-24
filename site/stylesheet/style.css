@@ -969,4 +969,26 @@ footer .section__task{
         font-size: 25px;
         height: 50px;
     }
+    
+    .form__textarea{
+        width: 62vw;
+        height: 120px;
+    }
+
+    .contacts img{
+        display: none;
+    }
+    
+    .form__button{
+    width: 225px;
+    margin: 25px auto 0;
+    height: 40px;
+    background: #1B2735;
+    font-size: 21px;
+    font-weight: 100;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
 }
