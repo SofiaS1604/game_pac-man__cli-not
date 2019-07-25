@@ -1,4 +1,11 @@
 $(document).ready(function () {
+    $('.section__menu').click(() => {
+            $('.navigation__menu').animate({
+                "height": '100vh',
+                "display": 'flex'
+            },500)
+    })
+
     let newSection;
     $('.section__classes').delegate('a', 'click', function(e) {
         e.preventDefault();
@@ -67,7 +74,14 @@ if(document.querySelector('.section__menu')){
     document.querySelector('.section__menu').addEventListener('click', () => {
         if (active === 0){
             document.querySelector('.section__menu').classList.add('section__menu--active');
-            document.querySelector('.section__classes').style.display = 'flex';
+            if(document.querySelector('.navigation__menu')){
+                document.querySelector('.navigation__menu').style.display = 'flex';
+            }
+
+            if (document.querySelector('.section__classes')){
+                document.querySelector('.section__classes').style.display = 'flex';
+            }
+
             active = 1;
             if(document.querySelector('.section__block')){
                 for (let i = 0; i < document.querySelectorAll('.section__block').length; i++){
@@ -76,7 +90,14 @@ if(document.querySelector('.section__menu')){
             }
         }else{
             document.querySelector('.section__menu').classList.remove('section__menu--active');
-            document.querySelector('.section__classes').style.display = 'none';
+            if(document.querySelector('.navigation__menu')){
+                document.querySelector('.navigation__menu').style.display = 'flex';
+            }
+
+            if (document.querySelector('.section__classes')){
+                document.querySelector('.section__classes').style.display = 'flex';
+            }
+
             active = 0;
             if(document.querySelector('.section__block')){
                 for (let i = 0; i < document.querySelectorAll('.section__block').length; i++){

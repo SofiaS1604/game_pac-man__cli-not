@@ -113,6 +113,34 @@ header{
     left: -50px;
 }
 
+.menu__mobile{
+    display: none;
+    flex: 1;
+    justify-content: flex-end;
+    margin-right: 50px;
+    flex-direction: column;
+}
+
+.navigation__menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #0C1524;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+}
+
+
+.navigation__menu--active{
+    height: 100vh;
+    width: 100vw;
+}
+
 .navigation_link:hover .menu__navigation{
     display: flex;
     transition: all 1s;
@@ -810,6 +838,8 @@ footer{
 
 .section__menu{
     position: relative;
+    z-index: 11;
+    align-self: flex-end;
 }
 
 .section__menu, .section__menu:after, .section__menu:before{
@@ -853,6 +883,10 @@ footer .section__task{
     display: none;
 }
 
+.section__menu{
+    display: none;
+}
+
 .form__button{
     width: 225px;
     margin: 25px auto 0;
@@ -884,11 +918,19 @@ footer .section__task{
         display: none;
     }
 
+    .section__menu{
+        display: block;
+    }
+
     .menu_search .navigation_ul{
         display: flex;
     }
 
     .search{
+        display: none;
+    }
+
+    .navigation{
         display: none;
     }
 
@@ -907,10 +949,6 @@ footer .section__task{
 
     .navigation_item{
         font-size: 28px;
-    }
-
-    header{
-        height: 100px;
     }
 
     .logo{
@@ -974,6 +1012,10 @@ footer .section__task{
         font-size: 28px;
     }
 
+    .form__title{
+        font-size: 30px;
+    }
+
     .contacts img{
         display: none;
     }
@@ -987,16 +1029,17 @@ footer .section__task{
         margin-top: 50px;
     }
 
+    .menu__mobile{
+        display: flex;
+    }
+
+    header{
+        height: 100px;
+    }
+
     .employee__title{
         font-size: 25px;
     }
-    .form__title{
-        font-size: 30px;
-    }
+
     
-    .form__button{
-        width: 250px;
-        height: 50px;
-        font-size: 23px;
-    }
 }
