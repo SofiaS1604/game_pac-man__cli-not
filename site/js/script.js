@@ -85,7 +85,7 @@ if(document.querySelector('.section__menu')){
         }else{
             document.querySelector('.section__menu').classList.remove('section__menu--active');
             if(document.querySelector('.navigation__menu')){
-                document.getElementsByClassName('navigation__menu')[0].classList.remove('navigation__menu--active');
+                document.getElementsByClassName('navigation__menu--active')[0].classList.remove('navigation__menu--active');
             }
 
             if (document.querySelector('.section__classes')){
@@ -104,7 +104,7 @@ if(document.querySelector('.section__menu')){
 
     document.getElementsByClassName('navigation_item')[0].addEventListener('click', (e) => {
         e.preventDefault();
-        document.getElementsByClassName('navigation__menu')[0].classList.remove('navigation__menu--active');
+        document.getElementsByClassName('navigation__menu--active')[0].classList.remove('navigation__menu--active');
 
         document.querySelector('.mobile__main').classList.add('navigation__menu--active');
     })
