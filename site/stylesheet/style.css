@@ -928,10 +928,6 @@ footer .section__task{
         display: none;
     }
 
-    .navigation{
-        display: none;
-    }
-
     .section__class{
         font-size: 28px;
         width: 250px;
@@ -1063,12 +1059,13 @@ footer .section__task{
         margin-right: auto;
     }
 
-    .container__text{
+    .container__text p{
         display: none;
     }
 
     .container__title{
         margin-bottom: 35px;
+        font-size: 28px;
     }
 
     header{
@@ -1085,7 +1082,7 @@ footer .section__task{
         font-size: 23px;
     }
 
-    .navigation_link + .navigation_link{
+    .navigation__menu .navigation_link + .navigation__menu .navigation_link{
         margin-left: 0;
     }
 

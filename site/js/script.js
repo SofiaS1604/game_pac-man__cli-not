@@ -64,6 +64,7 @@ if(document.querySelector('.employees')){
 }
 
 if(document.querySelector('.section__menu')){
+    document.querySelector('.navigation').style.display = 'none';
     let active = 0;
     document.querySelector('.section__menu').addEventListener('click', () => {
         if (active === 0){
