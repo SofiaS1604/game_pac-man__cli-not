@@ -1041,5 +1041,8 @@ footer .section__task{
         font-size: 25px;
     }
 
-    
+
+    .navigation_link + .navigation_link{
+        margin-left: 0;
+    }
 }
