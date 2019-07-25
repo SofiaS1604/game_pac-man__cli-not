@@ -28,6 +28,7 @@ header{
     cursor: pointer;
     background-repeat: no-repeat;
     transition: all 0.3s;
+    z-index: 5;
 }
 
 .logo:hover{
@@ -128,7 +129,7 @@ header{
     background-color: #0C1524;
     display: none;
     width: 100vw;
-    height: 100vh;
+    height: 0;
     z-index: 1;
     justify-content: center;
     align-items: center;
@@ -137,8 +138,9 @@ header{
 
 
 .navigation__menu--active{
-    height: 100vh;
+    height: 50vh;
     width: 100vw;
+    transition: all 0.5s;
 }
 
 .navigation_link:hover .menu__navigation{
