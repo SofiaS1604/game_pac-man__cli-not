@@ -125,10 +125,10 @@ header{
 .navigation__menu{
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
     background-color: #131E2B;
     display: none;
-    width: 100vw;
+    width: 50vw;
     height: 0;
     z-index: 1;
     justify-content: center;
@@ -139,7 +139,6 @@ header{
 
 .navigation__menu--active{
     height: 50vh;
-    width: 100vw;
     transition: all 0.5s;
 }
 
