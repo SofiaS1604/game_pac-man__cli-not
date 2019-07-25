@@ -134,6 +134,8 @@ header{
     justify-content: center;
     align-items: center;
     transition: all 0.5s;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 
