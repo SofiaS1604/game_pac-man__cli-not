@@ -99,13 +99,78 @@ if(document.querySelector('.section__menu')){
                 }
             }
         }
-    })
+    });
 
 
     document.getElementsByClassName('navigation_item')[0].addEventListener('click', (e) => {
         e.preventDefault();
-        document.getElementsByClassName('navigation__menu--active')[0].classList.remove('navigation__menu--active');
-
+        document.getElementsByClassName('navigation__menu')[0].classList.remove('navigation__menu--active');
         document.querySelector('.mobile__main').classList.add('navigation__menu--active');
-    })
+    });
+
+    document.getElementsByClassName('navigation_item')[1].addEventListener('click', (e) => {
+        e.preventDefault();
+        document.getElementsByClassName('navigation__menu--active')[0].classList.remove('navigation__menu--active');
+        document.querySelector('.mobile__maths').classList.add('navigation__menu--active');
+    });
+
+    document.getElementsByClassName('navigation_item')[2].addEventListener('click', (e) => {
+        e.preventDefault();
+        document.getElementsByClassName('navigation__menu--active')[0].classList.remove('navigation__menu--active');
+        document.querySelector('.mobile__physics').classList.add('navigation__menu--active');
+    });
+
+    document.getElementsByClassName('navigation_item')[3].addEventListener('click', (e) => {
+        e.preventDefault();
+        document.getElementsByClassName('navigation__menu--active')[0].classList.remove('navigation__menu--active');
+        document.querySelector('.mobile__linguistics').classList.add('navigation__menu--active');
+    });
+
+    document.getElementsByClassName('navigation_item')[4].addEventListener('click', (e) => {
+        e.preventDefault();
+        document.getElementsByClassName('navigation__menu--active')[0].classList.remove('navigation__menu--active');
+        document.querySelector('.mobile__informatics').classList.add('navigation__menu--active');
+    });
+
+    document.getElementsByClassName('navigation_item')[5].addEventListener('click', (e) => {
+        e.preventDefault();
+        document.getElementsByClassName('navigation__menu--active')[0].classList.remove('navigation__menu--active');
+        document.querySelector('.mobile__chess').classList.add('navigation__menu--active');
+    });
+
+    document.querySelector('.mobile__maths').getElementsByClassName('navigation_item')[0].addEventListener('click',(e) =>{
+        e.preventDefault();
+        document.getElementsByClassName('navigation__menu--active')[0].classList.remove('navigation__menu--active');
+        document.querySelector('.mobile__maths--section').classList.add('navigation__menu--active');
+    });
+
+    document.querySelector('.mobile__maths').getElementsByClassName('navigation_item')[1].addEventListener('click',(e) =>{
+        e.preventDefault();
+        document.getElementsByClassName('navigation__menu--active')[0].classList.remove('navigation__menu--active');
+        document.querySelector('.mobile__maths--theory').classList.add('navigation__menu--active');
+    });
+
+    document.querySelector('.mobile__maths').getElementsByClassName('navigation_item')[2].addEventListener('click',(e) =>{
+        e.preventDefault();
+        document.getElementsByClassName('navigation__menu--active')[0].classList.remove('navigation__menu--active');
+        document.querySelector('.mobile__maths--lessons').classList.add('navigation__menu--active');
+    });
+
+    document.querySelector('.mobile__physics').getElementsByClassName('navigation_item')[0].addEventListener('click',(e) =>{
+        e.preventDefault();
+        document.getElementsByClassName('navigation__menu--active')[0].classList.remove('navigation__menu--active');
+        document.querySelector('.mobile__physics--section').classList.add('navigation__menu--active');
+    });
+
+    document.querySelector('.mobile__linguistics').getElementsByClassName('navigation_item')[0].addEventListener('click',(e) =>{
+        e.preventDefault();
+        document.getElementsByClassName('navigation__menu--active')[0].classList.remove('navigation__menu--active');
+        document.querySelector('.mobile__linguistics--section').classList.add('navigation__menu--active');
+    });
+
+    document.querySelector('.mobile__linguistics').getElementsByClassName('navigation_item')[1].addEventListener('click',(e) =>{
+        e.preventDefault();
+        document.getElementsByClassName('navigation__menu--active')[0].classList.remove('navigation__menu--active');
+        document.querySelector('.mobile__linguistics--lessons').classList.add('navigation__menu--active');
+    });
 }

@@ -132,10 +132,8 @@ header{
     justify-content: center;
     align-items: center;
     transition: all 0.5s;
-    padding: 100px 50px 50px 50px;
+    padding: 100px 50px 15px 50px;
 }
-
-
 
 .navigation__menu--active{
     transition: all 0.5s;
@@ -1049,5 +1047,9 @@ footer .section__task{
 
     .navigation_link{
         text-align: center;
+    }
+
+    .menu-linguistics {
+        left: -9px;
     }
 }
