@@ -601,7 +601,6 @@ li{
 
 .log-in{
     background: #131E2B;
-    width: 500px;
     margin: 100px auto 0;
     display: flex;
     flex-direction: column;
@@ -1015,6 +1014,16 @@ footer .section__task{
         font-size: 30px;
     }
 
+    .log-in__input{
+        font-size: 28px;
+        width: 62vw;
+        height: 50px;
+    }
+
+    .log-in__title{
+        font-size: 30px;
+    }
+
     .contacts img{
         display: none;
     }
@@ -1032,6 +1041,36 @@ footer .section__task{
         display: flex;
     }
 
+    .form__button{
+        width: 245px;
+        height: 50px;
+        font-size: 23px;
+    }
+
+    .log-in__button{
+        width: 245px;
+        height: 50px;
+        font-size: 23px;
+    }
+
+    .container{
+        margin-bottom: 50px;
+        flex-direction: column-reverse;
+    }
+
+    .container * {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .container__text{
+        display: none;
+    }
+
+    .container__title{
+        margin-bottom: 35px;
+    }
+
     header{
         height: 100px;
     }
@@ -1040,6 +1079,11 @@ footer .section__task{
         font-size: 25px;
     }
 
+    .form__button{
+        width: 245px;
+        height: 50px;
+        font-size: 23px;
+    }
 
     .navigation_link + .navigation_link{
         margin-left: 0;
@@ -1051,27 +1095,5 @@ footer .section__task{
 
     .menu-linguistics {
         left: -9px;
-    }
-    
-    .log-in__button{
-        width: 245px;
-        height: 50px;
-        font-size: 23px;
-    }
-    
-    .form__button{
-        width: 245px;
-        height: 50px;
-        font-size: 23px;
-    }
-    
-    .log-in__input{
-        font-size: 28px;
-        width: 62vw;
-        height: 50px;
-    }
-
-    .log-in__title{
-        font-size: 30px;
     }
 }
