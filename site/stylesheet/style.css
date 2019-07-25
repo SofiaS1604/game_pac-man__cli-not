@@ -1082,7 +1082,7 @@ footer .section__task{
         font-size: 23px;
     }
 
-    .navigation__menu .navigation_link + .navigation__menu .navigation_link{
+    .navigation__menu .navigation_link{
         margin-left: 0;
     }
 
