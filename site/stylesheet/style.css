@@ -126,24 +126,20 @@ header{
     position: absolute;
     top: 0;
     right: 0;
-    background-color: #131E2B;
+    background-color: #0C1524;
     display: none;
-    width: 50vw;
-    height: 0;
     z-index: 1;
     justify-content: center;
     align-items: center;
     transition: all 0.5s;
-    padding-top: 100px;
-    padding-bottom: 50px;
-    padding-right: 50px;
-    padding-left: 50px;
+    padding: 100px 50px 50px 50px;
 }
 
 
+
 .navigation__menu--active{
-    height: 50vh;
     transition: all 0.5s;
+    display: flex;
 }
 
 .navigation_link:hover .menu__navigation{
@@ -1049,5 +1045,9 @@ footer .section__task{
 
     .navigation_link + .navigation_link{
         margin-left: 0;
+    }
+
+    .navigation_link{
+        text-align: center;
     }
 }
