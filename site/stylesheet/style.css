@@ -1052,4 +1052,26 @@ footer .section__task{
     .menu-linguistics {
         left: -9px;
     }
+    
+    .log-in__button{
+        width: 245px;
+        height: 50px;
+        font-size: 23px;
+    }
+    
+    .form__button{
+        width: 245px;
+        height: 50px;
+        font-size: 23px;
+    }
+    
+    .log-in__input{
+        font-size: 28px;
+        width: 62vw;
+        height: 50px;
+    }
+
+    .log-in__title{
+        font-size: 30px;
+    }
 }
