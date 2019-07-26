@@ -311,7 +311,7 @@ li{
 }
 
 .profile-container__image{
-    width: 400px;
+    width: 300px;
     float: left;
     object-fit: contain;
     margin: 50px auto;
@@ -357,9 +357,8 @@ li{
     .section__block--about{
         font-size: 28px;
     }
-    
+
     header{
         height: 100px;
     }
-
 }
