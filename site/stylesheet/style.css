@@ -1093,4 +1093,8 @@ footer .section__task{
     .menu-linguistics {
         left: -9px;
     }
+
+    .navigation-desktop{
+        display: none;
+    }
 }
