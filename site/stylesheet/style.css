@@ -311,14 +311,14 @@ li{
 }
 
 .profile-container__image{
-    width: 400px;
+    width: 60vw;
     float: left;
     object-fit: contain;
     margin: 50px auto;
 }
 
 .profile-container__text{
-    font-size: 25px;
+    font-size: 18px;
     font-weight: 100;
     color: #fff;
     overflow: hidden;
@@ -327,7 +327,7 @@ li{
 }
 
 .profile-container__title{
-    font-size: 28px;
+    font-size: 21px;
     text-align: center;
     font-weight: 100;
     color: #fff;
@@ -982,22 +982,22 @@ footer .section__task{
         width: 250px;
     }
 
-    .menu__submenu_item{
-        font-size: 28px;
-    }
+    /*.menu__submenu_item{*/
+    /*    font-size: 28px;*/
+    /*}*/
 
-    .menu__navigation_item{
-        font-size: 28px;
-    }
+    /*.menu__navigation_item{*/
+    /*    font-size: 28px;*/
+    /*}*/
 
-    .navigation_item{
-        font-size: 28px;
-    }
+    /*.navigation_item{*/
+    /*    font-size: 28px;*/
+    /*}*/
 
-    .logo{
-        height: 75px;
-        width: 65px;
-    }
+    /*.logo{*/
+    /*    height: 75px;*/
+    /*    width: 65px;*/
+    /*}*/
 
     .section__block--about{
         font-size: 28px;
@@ -1118,9 +1118,9 @@ footer .section__task{
         display: none;
     }
 
-    header{
-        height: 100px;
-    }
+    /*header{*/
+    /*    height: 100px;*/
+    /*}*/
 
     .employee__title{
         font-size: 25px;
@@ -1151,27 +1151,27 @@ footer .section__task{
 }
 
 @media screen and (max-width: 531px) {
-    .profile-container__image{
-        width: 60vw;
-        float: left;
-        object-fit: contain;
-        margin: 50px auto;
-    }
+    /*.profile-container__image{*/
+    /*    width: 60vw;*/
+    /*    float: left;*/
+    /*    object-fit: contain;*/
+    /*    margin: 50px auto;*/
+    /*}*/
 
-    .profile-container__text{
-        font-size: 28px ;
-        font-weight: 100;
-        color: #fff;
-        overflow: hidden;
-        margin-right: 50px;
-        margin-left: 50px;
-    }
+    /*.profile-container__text{*/
+    /*    font-size: 28px ;*/
+    /*    font-weight: 100;*/
+    /*    color: #fff;*/
+    /*    overflow: hidden;*/
+    /*    margin-right: 50px;*/
+    /*    margin-left: 50px;*/
+    /*}*/
 
-    .profile-container__title{
-        font-size: 25px;
-        text-align: center;
-        font-weight: 100;
-        color: #fff;
-        margin-bottom: 15px;
-    }
+    /*.profile-container__title{*/
+    /*    font-size: 25px;*/
+    /*    text-align: center;*/
+    /*    font-weight: 100;*/
+    /*    color: #fff;*/
+    /*    margin-bottom: 15px;*/
+    /*}*/
 }
