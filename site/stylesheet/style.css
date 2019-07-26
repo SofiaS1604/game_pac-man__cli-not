@@ -982,22 +982,22 @@ footer .section__task{
         width: 250px;
     }
 
-    /*.menu__submenu_item{*/
-    /*    font-size: 28px;*/
-    /*}*/
+    .menu__submenu_item{
+        font-size: 28px;
+    }
 
-    /*.menu__navigation_item{*/
-    /*    font-size: 28px;*/
-    /*}*/
+    .menu__navigation_item{
+        font-size: 28px;
+    }
 
-    /*.navigation_item{*/
-    /*    font-size: 28px;*/
-    /*}*/
+    .navigation_item{
+        font-size: 28px;
+    }
 
-    /*.logo{*/
-    /*    height: 75px;*/
-    /*    width: 65px;*/
-    /*}*/
+    .logo{
+        height: 75px;
+        width: 65px;
+    }
 
     .section__block--about{
         font-size: 28px;
@@ -1118,9 +1118,9 @@ footer .section__task{
         display: none;
     }
 
-    /*header{*/
-    /*    height: 100px;*/
-    /*}*/
+    header{
+        height: 100px;
+    }
 
     .employee__title{
         font-size: 25px;
