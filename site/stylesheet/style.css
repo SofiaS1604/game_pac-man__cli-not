@@ -311,7 +311,7 @@ li{
 }
 
 .profile-container__image{
-    width: 350px;
+    width: 400px;
     float: left;
     object-fit: contain;
     margin: 50px auto;
