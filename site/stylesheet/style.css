@@ -323,6 +323,7 @@ li{
     color: #fff;
     overflow: hidden;
     margin-right: 50px;
+    margin-left: 50px;
 }
 
 .profile-container__title{
@@ -1145,5 +1146,32 @@ footer .section__task{
 
     .navigation-desktop{
         display: none;
+    }
+
+}
+
+@media screen and (max-width: 531px) {
+    .profile-container__image{
+        width: 60vw;
+        float: left;
+        object-fit: contain;
+        margin: 50px auto;
+    }
+
+    .profile-container__text{
+        font-size: 28px ;
+        font-weight: 100;
+        color: #fff;
+        overflow: hidden;
+        margin-right: 50px;
+        margin-left: 50px;
+    }
+
+    .profile-container__title{
+        font-size: 25px;
+        text-align: center;
+        font-weight: 100;
+        color: #fff;
+        margin-bottom: 15px;
     }
 }
