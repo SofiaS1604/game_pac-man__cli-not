@@ -836,6 +836,9 @@ footer{
 
 .section__menu{
     position: relative;
+}
+
+.menu-mobile .section__menu{
     z-index: 11;
     align-self: flex-end;
 }

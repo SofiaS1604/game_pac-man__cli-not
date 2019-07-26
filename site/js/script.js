@@ -63,44 +63,47 @@ if(document.querySelector('.employees')){
     })
 }
 
-if(document.querySelector('.section__menu')){
+if(document.querySelector('.section__menu')) {
     let active = 0;
     document.querySelector('.section__menu').addEventListener('click', () => {
-        if (active === 0){
+        if (active === 0) {
             document.querySelector('.section__menu').classList.add('section__menu--active');
-            if(document.getElementsByClassName('navigation__menu')[0]){
+            if (document.getElementsByClassName('navigation__menu')[0]) {
                 document.getElementsByClassName('navigation__menu')[0].classList.add('navigation__menu--active');
             }
 
-            if (document.querySelector('.section__classes')){
+            if (document.querySelector('.section__classes')) {
                 document.querySelector('.section__classes').style.display = 'flex';
             }
 
             active = 1;
-            if(document.querySelector('.section__block')){
-                for (let i = 0; i < document.querySelectorAll('.section__block').length; i++){
+            if (document.querySelector('.section__block')) {
+                for (let i = 0; i < document.querySelectorAll('.section__block').length; i++) {
                     document.getElementsByClassName('section__block')[i].style.marginLeft = '-180px';
                 }
             }
-        }else{
+        } else {
             document.querySelector('.section__menu').classList.remove('section__menu--active');
-            if(document.querySelector('.navigation__menu')){
+            if (document.querySelector('.navigation__menu')) {
                 document.getElementsByClassName('navigation__menu--active')[0].classList.remove('navigation__menu--active');
             }
 
-            if (document.querySelector('.section__classes')){
+            if (document.querySelector('.section__classes')) {
                 document.querySelector('.section__classes').style.display = 'flex';
             }
 
             active = 0;
-            if(document.querySelector('.section__block')){
-                for (let i = 0; i < document.querySelectorAll('.section__block').length; i++){
+            if (document.querySelector('.section__block')) {
+                for (let i = 0; i < document.querySelectorAll('.section__block').length; i++) {
                     document.getElementsByClassName('section__block')[i].style.marginLeft = '50px';
                 }
             }
         }
     });
 
+}
+
+if(document.querySelector('.menu__mobile')){
 
     document.getElementsByClassName('navigation_item')[0].addEventListener('click', (e) => {
         e.preventDefault();
