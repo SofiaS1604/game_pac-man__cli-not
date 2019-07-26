@@ -357,5 +357,9 @@ li{
     .section__block--about{
         font-size: 28px;
     }
+    
+    header{
+        height: 100px;
+    }
 
 }
