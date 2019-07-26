@@ -278,7 +278,7 @@ li{
 
 .profile-container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     margin-top: 50px;
 }
@@ -308,15 +308,13 @@ li{
     text-align: center;
     font-weight: 100;
     color: #fff;
-    margin-bottom: 15px;
 }
 
 .profile-container__image{
     width: 300px;
-    margin-left: 75px;
     float: left;
-    margin-right: 75px;
     object-fit: contain;
+    margin: 50px auto;
 }
 
 .profile-container__text{
