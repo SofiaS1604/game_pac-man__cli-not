@@ -311,7 +311,7 @@ li{
 }
 
 .profile-container__image{
-    width: 60vw;
+    width: 400px;
     float: left;
     object-fit: contain;
     margin: 50px auto;
@@ -334,4 +334,28 @@ li{
 
 .block+.block{
     margin-top: 10px;
+}
+
+@media screen and (max-width: 1068px){
+    .menu__submenu_item{
+        font-size: 28px;
+    }
+
+    .menu__navigation_item{
+        font-size: 28px;
+    }
+
+    .navigation_item{
+        font-size: 28px;
+    }
+
+    .logo{
+        height: 75px;
+        width: 65px;
+    }
+
+    .section__block--about{
+        font-size: 28px;
+    }
+
 }

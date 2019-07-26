@@ -633,6 +633,7 @@ li{
     background: #131E2B;
     margin: 100px auto 0;
     display: flex;
+    min-width: 500px;
     flex-direction: column;
     padding-left: 50px;
     padding-right: 50px;
