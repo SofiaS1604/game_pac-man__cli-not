@@ -276,6 +276,13 @@ li{
     margin-top: 50px;
 }
 
+.profile-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 50px;
+}
+
 .main_image{
     width: 350px;
 }
@@ -298,6 +305,30 @@ li{
 
 .container__title{
     font-size: 25px;
+    text-align: center;
+    font-weight: 100;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.profile-container__image{
+    width: 300px;
+    margin-left: 75px;
+    float: left;
+    margin-right: 75px;
+    object-fit: contain;
+}
+
+.profile-container__text{
+    font-size: 25px;
+    font-weight: 100;
+    color: #fff;
+    overflow: hidden;
+    margin-right: 50px;
+}
+
+.profile-container__title{
+    font-size: 28px;
     text-align: center;
     font-weight: 100;
     color: #fff;
@@ -901,6 +932,18 @@ footer .section__task{
 }
 
 
+.container__title--mobile{
+    margin-bottom: 35px;
+    font-size: 28px;
+    text-align: center;
+    font-weight: 100;
+    color: #fff;
+    text-decoration: none;
+    display: none;
+}
+
+
+
 @media screen and (max-width: 1068px){
 
     .section__side-panel{
@@ -908,6 +951,10 @@ footer .section__task{
         border-right: 0;
         padding-right: 0;
         flex-direction: column;
+    }
+
+    .container__title--mobile{
+        display: block;
     }
 
     .section__mobile{
@@ -1069,6 +1116,7 @@ footer .section__task{
     .container__title{
         margin-bottom: 35px;
         font-size: 28px;
+        display: none;
     }
 
     header{
