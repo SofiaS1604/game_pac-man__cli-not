@@ -318,7 +318,7 @@ li{
 }
 
 .profile-container__text{
-    font-size: 21px;
+    font-size: 15px;
     font-weight: 100;
     color: #fff;
     overflow: hidden;
@@ -327,7 +327,7 @@ li{
 }
 
 .profile-container__title{
-    font-size: 28px;
+    font-size: 13px;
     text-align: center;
     font-weight: 100;
     color: #fff;
