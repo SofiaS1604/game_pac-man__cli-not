@@ -1,8 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-
- 
-<car-data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 
 <record>
 <make>Lexus</make>
