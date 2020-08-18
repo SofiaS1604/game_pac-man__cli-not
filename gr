@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookstore>
+  <book category="date">
+    <title lang="en">Posting Date</title>
+    <author-1>26.06.2020</author-1>
+    <author-2>26.06.2020</author-2>
+    <author-3>26.06.2020</author-3>
+    <author-4>26.06.2020</author-4>
+    <author-5>26.06.2020</author-5>
+  </book>
+  <book category="name">
+    <title lang="en">Name</title>
+    <author-1>Aleksei Valerevich</author-1>
+    <author-2>Irina Vladimirovna</author-2>
+    <author-3>Stepan Alexeevich</author-3>
+    <author-4>Evgenii Pavlovich</author-4>
+    <author-5>Pavel Olegovich</author-5>
+  </book>
+  <book category="amount">
+    <title lang="en">Amount</title>
+    <author-1>500</author-1>
+    <author-2>600</author-2>
+    <author-3>700</author-3>
+    <author-4>800</author-4>
+    <author-5>900</author-5>
+  </book>
+  <book category="branch">
+    <title lang="en">Bank Branch No.</title>
+    <author-1>ALFARUMM</author-1>
+    <author-2>SABRRUMM</author-2>
+    <author-3>ALFARUMM</author-3>
+    <author-4>ALFARUMM</author-4>
+    <author-5>MODBRU22</author-5>
+  </book>
+  <book category="account">
+    <title lang="en">Bank Account No.</title>
+    <author-1>40817978604500022222</author-1>
+    <author-2>40802978538001033333</author-2>
+    <author-3>40817978107130044444</author-3>
+    <author-4>40820978706380055555</author-4>
+    <author-5>40802978670010166666</author-5>
+  </book>
+  <book category="code">
+    <title lang="en">Currency Code</title>
+    <author-1></author-1>
+    <author-2></author-2>
+    <author-3></author-3>
+    <author-4></author-4>
+    <author-5></author-5>
+  </book>
+</bookstore>
