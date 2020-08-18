@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+ 
+<car-data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+
+<record>
+<make>Lexus</make>
+<mode1>SC</model>
+<year>1998</year>
+<value>$51,499.34</value>
+
+</record>
+
+<record>
+<make>Scion</make>
+<model>xB></model>
+<year>2010</year>
+<value>$19,826.49</value>
+
+</record>
